@@ -1,7 +1,7 @@
 # Summary
 
 * [Java - Big Data Engineer Training](README.md)
-* [SE集合](SE集合/README.md)
+* [SE 集合collecton](SE集合/README.md)
    * [数组](SE集合/数组.md)
    * [字符串](SE集合/字符串.md)
 * [学习心得](学习心得/README.md)
@@ -13,5 +13,6 @@
    * [idea和快捷键](学习心得/idea和快捷键.md)
    * [搜索网址](学习心得/搜索网址.md)
 * [其他](其他/README.md)
+   * [生成个人文档](其他/生成个人文档.md)
    
 
