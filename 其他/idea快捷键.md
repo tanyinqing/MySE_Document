@@ -22,6 +22,7 @@ Autoscroll from source
     <td> ctrl+j 查看英文文档</td>
     <td>ctrl+tab 查看最近打开过的文档</td>
     <td>ctrl+p 看参数 鼠标放入括号</td>
+    <td>/** 回车 添加注释</td>
 </tr>
 
 <tr>
