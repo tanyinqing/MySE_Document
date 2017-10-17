@@ -1,12 +1,12 @@
 
-## 集合框架
+## 集合框架  很多接口和类的组合
 
 > The `Java Collections Framework` is a collection of interfaces and classes which helps in storing and processing the data efficiently.
 
-### Main Interfaces
+### Main Interfaces 接口之间的继承关系 
 - `Iterable`
 - `Collection`
-  - `List`
+  - `List` ctrl+alt+u  鼠标放在类的上面 出现继承图
   
     ![List](../image/javase/diagram/List.png)
   
@@ -18,7 +18,7 @@
 
 ### List
 
-> 有序（序列）
+> 有序（序列）有索引和下标 
 
 > 可重复元素
 
@@ -26,36 +26,36 @@
   
   ![Vector](../image/javase/diagram/Vector.png)
   
-- **`ArrayList`**
+- **`ArrayList`最常用的 Java util 包**
   
   ![ArrayList](../image/javase/diagram/ArrayList.png)
   
-  > constructors
+  > constructors 3个构造器
   
-  - ArrayList()
+  - ArrayList()  无参数构造方法
   - ArrayList(Collection<? extends E> c)
-  - **ArrayList(int initicalCapacity)**
+  - **ArrayList(int initicalCapacity) 推荐使用 没有取得容量的方法 但有容量的概念**
   
   > methods
   
   - **add**
-  - **addAll**
+  - **addAll 加入另一个集合的元素**
   - **size**
   - clear
-  - contains
-  - ensureCapacity
+  - contains 是否包含 返回是否
+  - ensureCapacity 容量有关
   - **get**
-  - indexOf
-  - isEmpty
-  - lastIndexOf
-  - remove
-  - removeRange
-  - set
+  - indexOf  返回元素的索引值 从前向后查找
+  - isEmpty 判断集合是否为空
+  - lastIndexOf 返回元素的索引值 从后向前查找
+  - remove 删除 参数是索引
+  - removeRange  受保护的方法，子类才可以访问，删除一个范围
+  - set 修改
   - **size**
-  - toArray
-  - trimToSize
-  
-  > extended methods
+  - toArray  把它作为一个数组对象输出，看的更清楚了
+  - trimToSize  把容量变成和size一样多
+   
+  > extended methods  继承来的方法
   
   - equals
   - iterator
