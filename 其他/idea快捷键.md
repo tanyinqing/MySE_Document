@@ -26,6 +26,10 @@ Autoscroll from source
 </tr>
 
 <tr>
+    <td> ctrl+alt+u  鼠标放在类的上面 出现继承图</td>
+</tr>
+
+<tr>
     <td> 软件的注册 Intellij IDEA</td>
     <td>   License_server_address http://idea.iteblog.com/key.php </td>
     <td>  shift+Num lock </td>
