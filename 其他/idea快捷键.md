@@ -26,7 +26,17 @@ Autoscroll from source
 </tr>
 
 <tr>
-    <td> ctrl+alt+u  鼠标放在类的上面 出现继承图</td>
+    <td> </td>
+</tr>
+
+<tr>
+    <td colspan="4" style="text-align: center"> Java SE 编程的快捷键 </td>
+</tr>
+<tr>
+    <td> psvm tab 生成主方法的快捷键  </td>
+    <td> sout tab 快速输出的快捷键 </td>
+    <td>iter tab快捷键 增强for循环 快捷键 </td>
+    <td>ctrl+alt+u  鼠标放在类的上面 出现继承图  </td>
 </tr>
 
 <tr>
@@ -94,14 +104,6 @@ Autoscroll from source
     <td> </td>
     <td>  </td>
 </tr>
-<tr>
-    <td colspan="4" style="text-align: center"> Java SE 编程的快捷键 </td>
-</tr>
-<tr>
-    <td> psvm tab 生成主方法的快捷键  </td>
-    <td> sout tab 快速输出的快捷键 </td>
-    <td>iter tab快捷键 增强for循环 快捷键 </td>
-    <td>  </td>
-</tr>
+
 </tbody>
 </table>

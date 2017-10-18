@@ -20,7 +20,8 @@
 
 > 有序（序列）有索引和下标 
 
-> 可重复元素
+> 可存放重复元素 
+> 机制是先建立一个数组， 
 
 - `Vector`
   
@@ -54,6 +55,28 @@
   - **size**
   - toArray  把它作为一个数组对象输出，看的更清楚了
   - trimToSize  把容量变成和size一样多
+  
+  ```
+   ArrayList<Integer>integers=new ArrayList<>(10000);
+          integers.add(1);
+          integers.add(1);
+          integers.add(1);
+          System.out.println(integers);//[1, 1, 1]查看明细
+          
+          哈希码 为每个对象提供的一个编码
+          
+          for (OverrideTest overrideTest : overrideTests) {
+                     System.out.println(overrideTest.hashCode());
+                 } 一次输出对象的哈希码
+                 
+                  integers.trimToSize(); // capacity = size   把容量变成和size一样多
+                 
+       这是object中头string的源码  返回 cn.edu.tsinghua.javase.ceshi.OverrideTest@74a14482         
+       前部分是包名   hashCode()这个是哈希码 Integer.toHexString这个是讲对象的哈希码转化成16进制
+     public String toString() {
+            return getClass().getName() + "@" + Integer.toHexString(hashCode());
+        }
+  ```
    
   > extended methods  继承来的方法
   
