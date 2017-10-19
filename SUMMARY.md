@@ -44,5 +44,6 @@
    * [github单个项目如何做成网页](其他/github单个项目如何做成网页.md)
    * [markdown语法](其他/markdown语法.md)
    * [软键盘](其他/软键盘.md)
+   * [idea构建项目](其他/idea构建项目.md)
    
 
