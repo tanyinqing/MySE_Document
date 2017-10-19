@@ -38,6 +38,9 @@ Autoscroll from source
     <td>iter tab快捷键 增强for循环 快捷键 </td>
     <td>ctrl+alt+u  鼠标放在类的上面 出现继承图  </td>
 </tr>
+<tr>
+    <td> itit  迭代器的快捷键  </td>   
+</tr>
 
 <tr>
     <td> 软件的注册 Intellij IDEA</td>

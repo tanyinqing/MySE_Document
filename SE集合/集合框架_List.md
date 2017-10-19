@@ -6,7 +6,7 @@
 ### Main Interfaces 接口之间的继承关系 
 - `Iterable`
 - `Collection`
-  - `List` ctrl+alt+u  鼠标放在类的上面 出现继承图
+  - `List` ctrl+alt+u  鼠标放在类的上面 出现继承图 放在包上显示包结构
   
     ![List](../image/javase/diagram/List.png)
   
@@ -95,7 +95,7 @@
   
   ![LinkedList](../image/javase/diagram/LinkedList.png)
   
-- ArrayList Vs LinkedList  时空复杂度 LinkList 沾的内存更大
+- ArrayList Vs LinkedList  时空复杂度 LinkList 占的内存更大
   - Search: ArrayList search operation is pretty fast compared to the LinkedList search operation. get(int index) in ArrayList gives the performance of O(1) while LinkedList performance is O(n).
   - 找某一个元素，通过索引，ArrayList比较快，前后中时间差不多 LinKList 逐个比较找元素 两边快，中间慢
   > Reason: ArrayList maintains index based system for its elements as it uses array data structure implicitly which makes it faster for searching an element in the list. On the other side LinkedList implements doubly linked list which requires the traversal through all the elements for searching an element.
@@ -110,3 +110,15 @@
   
   -ArrayLisst 删除一个，后面的元素移除前移
   -ListLisst 删除一个，上一个和下一个相互指向一下就可以了
+  - ListLisst 用在频繁的修改和删除上
+  
+  ```
+     // ArrayList 一万个元素 删除第一个需要的微秒数
+          ArrayList<Integer>arrayList=new ArrayList<>();
+          for (int i = 0; i < 1000000; i++) {
+              arrayList.add(i);
+          }
+      long begin=System.nanoTime();//微秒s
+          arrayList.remove(0);
+          System.out.println(System.nanoTime()-begin);
+  ```

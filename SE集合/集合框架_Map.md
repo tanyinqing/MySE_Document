@@ -1,20 +1,20 @@
 ### Map
 
-> `Key - Value` 对结构
+> `Key - Value` 对结构 哈希表 键值对
   
 - `Hashtable`
   
   > 无序
 
-  > `non-null` and key `non-null` value
+  > `non-null` and key `non-null` value  都不能为空 键唯一
   
   ![Hashtable](../image/javase/diagram/Hashtable.png)
   
-- `HashMap`
+- `HashMap 用的比较多`
 
   > 无序
   
-  > `null` key and `null` value
+  > `null` key and `null` value 键和值可以为空
   
   ![HashMap](../image/javase/diagram/HashMap.png)
   
@@ -32,34 +32,34 @@
 
   > 使用 `红-黑 树` 存储元素
 
-  > 按元素值排序
+  > 按元素键的值排序
 
   > `non-null` key and `null` value
   
   ![TreeMap](../image/javase/diagram/TreeMap.png)
   
-- ~~`WeakHashMap`~~
+- ~~`WeakHashMap用的比较少`~~
   
   ![WeakHashMap](../image/javase/diagram/WeakHashMap.png)
   
-- ~~`IdentityHashMap`~~
+- ~~`IdentityHashMap用的比较少`~~
   
   ![IdentityHashMap](../image/javase/diagram/IdentityHashMap.png)
 
-### Iterator / ListIterator
+### Iterator / ListIterator  提供循环服务
 
-- `Iterator`
+- `Iterator  迭代器 比较常用`
 - `ListIterator`
 
   ![ListIterator](../image/javase/diagram/ListIterator.png)
 
 #### Iterator Vs ListIetrator
 
-- Iterator 可用于遍历 List 和 Set
+- Iterator 可用于遍历 List 和 Set  因为它们实现了接口
 
   > ListIterator 只能遍历 List
 
-- Iterator 只能向前遍历
+- Iterator 只能向后遍历
 
   > ListIterator 能向前或向后遍历
 
@@ -81,7 +81,18 @@
   - next
   - remove
 
-
+```
+这是它的使用方法  
+ ArrayList<Integer>list=new ArrayList<>();
+    list.add(1);
+    list.add(2);
+    //    3种循环方式 Iterator声明类型 ArrayList内部的一个类
+    Iterator<Integer>iterator=list.iterator();//返回接口实现类的实例
+    //  itit  迭代器的快捷键
+    while (iterator.hasNext()){
+        System.out.println(iterator.next());
+    }
+```
 - ListIterator 的常用方法
   - add
   - hasNext
@@ -93,18 +104,18 @@
   - remove
   - set
 
-### Utils
-- `Collections`
-    - reverse
-    - sort
-    - singletonList `ompare with Arrays.asList()`
-- `Arrays`
+### Utils  实用工具类接口
+- `Collections 接口，给list，set，map 排序使用的`
+    - reverse 反转
+    - sort  排序 按元素的值排序
+    - singletonList `ompare with Arrays.asList() `
+- `Arrays 数组的工具类`
     - asList
-    - binarySearch
+    - binarySearch 实现二分查找 某一个值  前提是经过排序才可以 返回是排序后的结果的元素的索引
     - copyOf
     - copyOfRange
-    - equals
-    - fill
-    - sort
-    - toString
-    - deepToString
+    - equals 判断是否相等 
+    - fill  填充 数据全部改变
+    - sort  排序
+    - toString  输出全部数组
+    - deepToString  二维数组以字符串形式输出

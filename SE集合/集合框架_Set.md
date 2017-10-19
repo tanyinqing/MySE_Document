@@ -2,7 +2,7 @@
 
 > 不可重复元素
 
-- `HashSet`
+- `HashSet`运用的还多一些
 
   > 使用 `HashMap` 存储元素
 
