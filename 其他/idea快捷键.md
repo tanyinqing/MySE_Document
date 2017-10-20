@@ -19,7 +19,7 @@ Autoscroll from source
 </tr>
 
 <tr>
-    <td> ctrl+j 查看英文文档</td>
+    <td> ctrl+q 查看英文文档</td>
     <td>ctrl+tab 查看最近打开过的文档</td>
     <td>ctrl+p 看参数 鼠标放入括号</td>
     <td>/** 回车 添加注释</td>
@@ -36,7 +36,7 @@ Autoscroll from source
     <td> psvm tab 生成主方法的快捷键  </td>
     <td> sout tab 快速输出的快捷键 </td>
     <td>iter tab快捷键 增强for循环 快捷键 </td>
-    <td>ctrl+alt+u  鼠标放在类的上面 出现继承图  </td>
+    <td>ctrl+alt+u  鼠标放在类或包的上面 出现继承图 I表示接口 c表示类 </td>
 </tr>
 <tr>
     <td> itit  迭代器的快捷键  </td>   
