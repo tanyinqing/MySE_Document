@@ -66,3 +66,33 @@ public class Apple<T>
     }
 }
 ```
+- 可变参数与泛型可以很好的共存
+
+```
+public class Test {
+    public static void main(String[] args) {
+        Test t = new Test();
+        //t.list(1, 2, 3, 4, 5)  返回一个泛型的列表
+        for (Integer i : t.list(1, 2, 3, 4, 5)) {
+            System.out.printf(i + " ");
+        }
+
+    }
+//可变参数与泛型可以很好的共存
+    public <T> List<T> list(T... ts) {
+        return Arrays.asList(ts);
+    }
+}
+
+```
+- 擦除的神秘之处
+
+```
+//        在泛型代码内部，无法获得任何有关泛型参数类型的信息
+//        java 是使用擦除来实现的，这意味着当你使用泛型时，任何具体的类型信息都被擦除了。
+        Class c1 = new ArrayList<String>().getClass();
+        Class c2 = new ArrayList<Integer>().getClass();
+        System.out.printf(c1.equals(c2) ? "true" : "false");
+
+返回true
+```
