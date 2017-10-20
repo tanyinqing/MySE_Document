@@ -20,4 +20,7 @@
    out/
     ```
     
-  
+- Intellij idea 代码提示忽略大小写
+  -  然后，输入：sensitive 将右侧的 case sensitive completion 修改为NONE 就可以了
+    
+     

@@ -27,4 +27,18 @@ Java - 大数据工程师培训
 
 |类|说明|链接|
 |---|---|---|
-|||[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/collecton/Array2D.java)|
+|ArrayListVsLinkedList|比较两个链表的效率|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/collecton/ArrayListVsLinkedList.java)|
+|ArraysTest|操作数组的工具类练习|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/collecton/ArraysTest.java)|
+|CollectionsTest|操作集合的工具类|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/collecton/CollectionsTest.java)|
+|ExpandedArrayListMethods|ArrayList集合的扩展方法|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/collecton/ExpandedArrayListMethods.java)|
+|HashMapTest|键值对的集合|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/collecton/HashMapTest.java)|
+|HashSetTest|set的一个类|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/collecton/HashSetTest.java)|
+|HashtableDemo|set的一个类|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/collecton/HashtableDemo.java)|
+|HomeworkArrayList|反射方法取出一个类的域|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/collecton/HomeworkArrayList.java)|
+|IiteratorTest|迭代器的接口|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/collecton/IiteratorTest.java)|
+|LiinkedListTest|list的一个类|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/collecton/LiinkedListTest.java)|
+|LinkedHashMapTest|map的一个类|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/collecton/LinkedHashMapTest.java)|
+|LinkedHashSetTest|set的一个类|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/collecton/LinkedHashSetTest.java)|
+|ListIteratorTest|另一种迭代器|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/collecton/ListIteratorTest.java)|
+|TreeMapTest|map的一个类|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/collecton/TreeMapTest.java)|
+|TreeSetTest|set的一个类|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/collecton/TreeSetTest.java)|

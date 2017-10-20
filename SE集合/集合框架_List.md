@@ -80,6 +80,16 @@
    
   > extended methods  继承来的方法
   
+  ```
+  // class = field + method  //反射机制取出类的域
+          Field field = ArrayList.class.getDeclaredField("elementData");// java.lang.reflect
+          field.setAccessible(true);
+  
+          strings.trimToSize(); //让元素的数量等于容量
+  
+          System.out.println(((Object[]) field.get(strings)).length);
+  ```
+  
   - equals 两个列表个数一样 顺序一样才可以 ==比较的是内存的地址
   - iterator
   - listIterator
