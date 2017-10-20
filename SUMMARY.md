@@ -1,6 +1,17 @@
 # Summary
 
 * [Java - Big Data Engineer Training](README.md)
+* [SE 其他](SE其他/README.md)
+   * [泛型](SE其他/generics.md)
+   * [异常处理](SE其他/exception.md)
+   * [数据流与文件](SE其他/io.md)
+   * [附:练习题](javase/exercise.md)
+   * [补1.正则表达式](javase/regex.md)
+   * [补2.反射](javase/reflect.md)
+   * [补3.多线程](javase/multithreading.md)
+   * [补4.序列化](javase/serializable.md)
+   * [补5.内部类](javase/inner_class.md)
+   * [补6.基础类库](javase/api.md)
 * [SE 集合collecton](SE集合/README.md)
    * [数组](SE集合/数组.md)
    * [字符串](SE集合/字符串.md)
