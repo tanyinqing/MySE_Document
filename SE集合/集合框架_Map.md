@@ -75,7 +75,7 @@
 ### Iterator / ListIterator  提供循环服务的接口
 
 - `Iterator  迭代器 比较常用`
-- `ListIterator`
+- `ListIterator`  子接口
 
   ![ListIterator](../image/javase/diagram/ListIterator.png)
   
@@ -160,7 +160,7 @@ listIterator 的使用方法
   - set
 
 ### Utils  实用工具类接口
-- `Collections 这个是一个类，给list，set，map 排序使用的`
+- `Collections 这个是一个静态类，给list，set，map 排序使用的`
     - reverse 反转
     - sort  排序 按元素的值排序
     - singletonList `ompare with Arrays.asList() 向比较`
@@ -253,7 +253,7 @@ listIterator 的使用方法
     返回：
     如果它包含在数组中，则返回搜索键的索引；否则返回 (-(插入点) - 1)。插入点 被定义为将键插入数组的那一点：即第一个大于此键的元素索引，如果数组中的所有元素都小于指定的键，则为 a.length。注意，这保证了当且仅当此键被找到时，返回的值将 >= 0。
     ```
-    - copyOf
+    - copyOf  数组复制一部分元素
     - copyOfRange
     - equals 判断是否相等 
     - fill  填充 数据全部改变

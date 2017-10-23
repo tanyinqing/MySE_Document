@@ -42,3 +42,4 @@ Java - 大数据工程师培训
 |ListIteratorTest|另一种迭代器|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/collecton/ListIteratorTest.java)|
 |TreeMapTest|map的一个类|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/collecton/TreeMapTest.java)|
 |TreeSetTest|set的一个类|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/collecton/TreeSetTest.java)|
+|SingLetonListVsArrayList|Arrays重点方法|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/collecton/SingLetonListVsArrayList.java)|
