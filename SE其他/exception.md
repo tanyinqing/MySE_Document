@@ -2,16 +2,16 @@
 
 > An exception is an event, which occurs during the execution of a program, that disrupts the normal flow of the program's instructions.
 
-1. 异常的产生
-    - `java.lang.ArithmaticException`
-    - `java.lang.StringIndexOutOfBoundsException`
-    - `java.lang.ArrayIndexOutOfBoundsException`
-    - `java.lang.NumberFormatException`
-    - `java.lang.NullPointerException`
+1. 异常的产生 会中断程序异常 产生了一个异常的实例
+    - `java.lang.ArithmaticException  算数异常`
+    - `java.lang.StringIndexOutOfBoundsException  字符串索引超出异常`
+    - `java.lang.ArrayIndexOutOfBoundsException  数组索引越界异常`
+    - `java.lang.NumberFormatException  数字格式异常`
+    - `java.lang.NullPointerException  空指针异常`
         
-2. 异常的处理
+2. 异常的处理后  catch块内的代码终止运行，但代码块外其他程序正常运行，  
 
- ```java
+ ```
  try {
      // 可能产生异常的语句块
  } catch (ExceptionType exceptionType) {
@@ -29,26 +29,26 @@
     - `finally` 语句块总是会被执行
     - 异常的处理方式
         - 输出异常信息 `e.printStackTrace();`
-        - 退出程序 `System.exit(1)`
+        - 退出程序 `System.exit(1)  主动退出 finally中的语句也退出`
         - 针对特定异常的更积极的处理方式
 
 3. 异常的分类
 
     ```java
     java.lang.Object
-        java.lang.Throwable
-            java.lang.Error
-            java.lang.Exception
-                java.lang.RuntimeException
+        java.lang.Throwable 可以抛出的
+            java.lang.Error  错误 无法处理
+            java.lang.Exception  所有异常的父类
+                java.lang.RuntimeException  运行时异常
                 java.io.IOException
                 *.*.*Exception
     ```
 
-    - 非受检异常 `unchecked exception`
+    - 非受检异常 `unchecked exception 可以通过编译`   另一个是多种因素造成的，不可避免的，程序员不可控的
         
         > RuntimeException类及其子类是非受检异常
 
-    - 受检异常 `checked exception`
+    - 受检异常 `checked exception 不能通过编译，必须显示处理`  一个是不应该产生的，是程序员本身bug，
     
         > Exception类中除了RuntimeException之外的其他异常类及其子类
     
@@ -71,5 +71,6 @@
       e.printStackTrace();
   }
   ```
+
 
 

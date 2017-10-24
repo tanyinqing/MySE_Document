@@ -31,7 +31,7 @@ public class GenericTest<T> {
     > 类型参数的命名 建议用下列参数
 
         E - Element (used extensively by the Java Collections Framework)
-        K - Key
+        K - Key  map接口中大量用
         V - Value
         N - Number
         T - Type 指代任意类型
