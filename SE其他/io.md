@@ -1,6 +1,6 @@
 # Chapter 7 Stream & File  数据流 有向流动的数据
 
-1. `InputStream 输入流` / `OutputStream 输出流` / `Reader` / `Writer`
+1. `InputStream 输入流` / `OutputStream 输出流` / `Reader` / `Writer`  读取文件是一个字节一个字节读取的
 
    > 都是抽象类，不能实例化，只能作为父类使用。用已知子类实例化。注意需要 `close() 释放系统资源`
    
@@ -13,7 +13,7 @@
    * `OutputStream`
      * 基于 字节 的输出流
    * `Reader`   FileReader是Reader子类 从文件中读出数据
-     * 基于 字符 的输入流  适合文本文件
+     * 基于 字符 的输入流  适合文本文件 2到3个字节
    * `Writer`    writer.flush(); 把缓存的内容写到文件
      * 基于 字符 的输出流
    * 从文件输入到程序里是输入流，参考是对程序本身而言
@@ -38,8 +38,25 @@
     implements DataOutput, DataInput, Closeable
    ```
 - 实例代码 
-     - 从文件的制定位置读取内容
+     
+- 文件先写后读
 
+```
+public static void main(String[] args) {
+        try (RandomAccessFile randomAccessFile = new RandomAccessFile("test", "rw");
+        ) {//指针逐个移动  写数据
+            for (int i = 0; i < 10; i++) {
+                randomAccessFile.writeDouble(i*0.5);
+            }//一个Double占8个字节
+            randomAccessFile.seek(8);//指针移动到0字节的位置
+            System.out.println(randomAccessFile.readDouble());
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+```
+- 从文件的制定位置读取内容
 ```
 public static void main(String[] args)
     {
@@ -87,9 +104,10 @@ public static void main(String[] args)
         }
     }
 ```
-- 向指定文件指定位置插入内容的功能
+- 向指定文件指定位置插入内容的功能 建立临时文件，先把文件读到临时文件，在添加内容，在把临时文件写入文件
 
 ```
+文件名 文件插入位置 插入的内容
   public static void insert(String fileName , long pos
             , String insertContent) throws IOException
     {
@@ -134,10 +152,87 @@ public static void main(String[] args)
 
 3. `BufferedInputStream` / `BufferedOutputStream` / `BufferedReader` / `BufferedWriter`  缓冲流也叫包装流，读取效率更高
 
-   > 提高输入输出效率
+   > 提高输入输出效率 加入缓冲的功能，主要用到这4个类
 
    * `bufferedReader.readLine()`
+   * BufferedInputStream(InputStream in)   创建一个 BufferedInputStream 并保存其参数，即输入流 in，以便将来使用。所以使用抽象方法的实现类做为参数；
+   
+```
+ BufferedInputStream inputStream = new BufferedInputStream(new FileInputStream("/Users/mingfei/Desktop/1025_JavaSE-RandomAccessFile.mov"));
+                BufferedOutputStream outputStream = new BufferedOutputStream(new FileOutputStream("test.mov"))
+```
+- 使用缓冲流，一边读文件，一边写文件
 
+```
+ public static void main(String[] args) {
+        // 缓冲流比较快
+        try (
+//                InputStream inputStream = new FileInputStream("/Users/mingfei/Desktop/1025_JavaSE-RandomAccessFile.mov");
+//                OutputStream outputStream = new FileOutputStream("test.mov")
+                BufferedInputStream inputStream = new BufferedInputStream(new FileInputStream("/Users/mingfei/Desktop/1025_JavaSE-RandomAccessFile.mov"));
+                BufferedOutputStream outputStream = new BufferedOutputStream(new FileOutputStream("test.mov"))
+        ) {
+            int i;
+            while ((i = inputStream.read()) != -1) {
+                outputStream.write(i);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+```
+- 使用缓冲流下载一个图片
+
+```
+public class DownloadImage {
+    private static final String IMAGE_URL = "http://img.jandan.net/news/2017/09/cf114fae2a31b13bac5a13c5bce745df.jpg";
+
+    public static void main(String[] args) {
+//        java.net.URL
+        try {
+            URL url = new URL(IMAGE_URL);
+//            System.out.println(url.getFile());
+            try (
+                    BufferedInputStream inputStream = new BufferedInputStream(url.openStream());
+                    BufferedOutputStream outputStream = new BufferedOutputStream(new FileOutputStream("test.jpg"))
+            ) {
+//                int i;
+//                while ((i = inputStream.read()) != -1) {
+//                    outputStream.write(i);
+//                }
+                // 8bit = 1byte  1个字节等于8个位
+                int i = inputStream.read();//这个向当于每次读出一个字节 也就是8个0或1的组合
+                while (i != -1) {
+                    outputStream.write(i); //字节逐个输入
+                    i = inputStream.read();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+- 使用BufferedReader这个缓冲字节流，一次读取一行，要比字符流快
+
+```
+  public static void main(String[] args) {
+        try (
+                BufferedReader bufferedReader = new BufferedReader(new FileReader("src/main/java/cn/edu/tsinghua/javase/ceshi/ReadLineTest.java"));
+        ) {
+            String line;
+            while ((line = bufferedReader.readLine()) != null) {
+                System.out.println(line);
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+```
 4. `File`
 
    * `File` 指代文件 `file` 或目录 `directory`

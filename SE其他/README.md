@@ -1,6 +1,4 @@
-<center><h1 style="magrin:0px;text-align:center;font-size:20px;">
-Java - 大数据工程师培训
-</h1></center>
+# 学习的方法是：将代码贴在讲义的下面，如果讲义比较多的话，就把讲义分成小节。
 
 ### 17.10.20项目  泛型地址   https://github.com/tanyinqing/JavaSE_20170902
 
@@ -15,14 +13,21 @@ Java - 大数据工程师培训
 |---|---|---|
 |CheckedExceptionTest|受检异常|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/exception/CheckedExceptionTest.java)|
 |Test|异常|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/exception/Test.java)|
+|ThrowTest|如何主动抛出异常|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/exception/ThrowTest.java)|
 
-### 17.10.24项目 `数据流的四个抽象类`
+### 17.10.24,25项目 `数据流的四个抽象类`
 类|说明|链接|
 |---|---|---|
 |InputStreamTest|字节文件输入流|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/io/InputStreamTest.java)|
 |OutputStreamTest|字节文件输出流|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/io/OutputStreamTest.java)|
 |ReaderTest|读取文本类型的字符文件|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/io/ReaderTest.java)|
 |WriterTest|写一个文本类型的字符文件|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/io/WriterTest.java)|
+|InputStreamOutputStreamTest|一边读文件，一边写文件|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/io/InputStreamOutputStreamTest.java)|
+|BufferedTest|使用缓冲字节流比较快,一边读文件，一边写文件|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/io/BufferedTest.java)|
+|DownloadImage|使用缓冲字节流下载图片|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/io/DownloadImage.java)|
+|InputStreamOutputStreamTest|使用文件字节流,一边读文件，一边写文件|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/io/InputStreamOutputStreamTest.java)|
+|RandomAccessFileTest|使用可读写文件,一边读文件，一边写文件|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/io/RandomAccessFileTest.java)|
+|ReadLineTest|使用缓冲字符流,快速读文件|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/io/ReadLineTest.java)|
 
 
 - 学习文件英文源码 鼠标放在方法或类上 快捷键 ctrl+q
