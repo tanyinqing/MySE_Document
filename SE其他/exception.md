@@ -1,4 +1,4 @@
-# Chapter 6 异常处理
+# Chapter 6 异常处理  本身的处理机制
 
 > An exception is an event, which occurs during the execution of a program, that disrupts the normal flow of the program's instructions.
 
@@ -60,6 +60,15 @@
 
 4. 显式抛出异常 `throw`
 
+```
+throw new FileNotFoundException(); //主动抛出异常
+
+例如
+ private void rangeCheck(int index) {
+        if (index >= size)
+            throw new IndexOutOfBoundsException(outOfBoundsMsg(index));
+    }
+```
 5. try-with-resources
 
     > since JDK 7
