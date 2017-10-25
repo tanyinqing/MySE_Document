@@ -37,8 +37,102 @@
     extends Object
     implements DataOutput, DataInput, Closeable
    ```
+- 实例代码 
+     - 从文件的制定位置读取内容
 
-3. `BufferedInputStream` / `BufferedOutputStream` / `BufferedReader` / `BufferedWriter`  缓冲流
+```
+public static void main(String[] args)
+    {
+        try(
+                RandomAccessFile raf =  new RandomAccessFile(
+                        "src/main/java/cn/edu/tsinghua/javase/yuxi/RandomAccessFileTest.java" , "r"))// 表明文件只能读取
+        {
+            // 获取RandomAccessFile对象文件指针的位置，初始位置是0
+            System.out.println("RandomAccessFile的文件指针的初始位置："
+                    + raf.getFilePointer());
+            // 移动raf的文件记录指针的位置  从文件的第300个字节处开始读取文件
+            raf.seek(300);
+            byte[] bbuf = new byte[1024];
+            // 用于保存实际读取的字节数
+            int hasRead = 0;
+            // 使用循环来重复“取水”过程
+            while ((hasRead = raf.read(bbuf)) > 0 )
+            {
+                // 取出“竹筒”中水滴（字节），将字节数组转换成字符串输入！
+                System.out.print(new String(bbuf , 0 , hasRead ));
+            }
+        }
+        catch (IOException ex)
+        {
+            ex.printStackTrace();
+        }
+    }
+```
+- 在文件的结尾追加内容
+
+```
+ public static void main(String[] args)
+    {
+        try(
+                //以读、写方式打开一个RandomAccessFile对象
+                RandomAccessFile raf = new RandomAccessFile("out.txt" , "rw"))
+        {
+            //将记录指针移动到out.txt文件的最后
+            raf.seek(raf.length());
+            raf.write("追加的内容！\r\n".getBytes());
+        }
+        catch (IOException ex)
+        {
+            ex.printStackTrace();
+        }
+    }
+```
+- 向指定文件指定位置插入内容的功能
+
+```
+  public static void insert(String fileName , long pos
+            , String insertContent) throws IOException
+    {
+        //建立一个临时文件 该文件将在JVM退出时删除
+        File tmp = File.createTempFile("tmp" , null);
+        tmp.deleteOnExit();
+        try(
+                RandomAccessFile raf = new RandomAccessFile(fileName , "rw");
+                // 使用临时文件来保存插入点后的数据
+                FileOutputStream tmpOut = new FileOutputStream(tmp);
+                FileInputStream tmpIn = new FileInputStream(tmp))
+        {
+            raf.seek(pos);
+            // ------下面代码将插入点后的内容读入临时文件中保存------
+            byte[] bbuf = new byte[64];
+            // 用于保存实际读取的字节数
+            int hasRead = 0;
+            // 使用循环方式读取插入点后的数据
+            while ((hasRead = raf.read(bbuf)) > 0 )
+            {
+                // 将读取的数据写入临时文件
+                tmpOut.write(bbuf , 0 , hasRead);
+            }
+            // ----------下面代码插入内容----------
+            // 把文件记录指针重新定位到pos位置
+            raf.seek(pos);
+            // 追加需要插入的内容
+            raf.write(insertContent.getBytes());
+            // 追加临时文件中的内容
+            while ((hasRead = tmpIn.read(bbuf)) > 0 )
+            {
+                raf.write(bbuf , 0 , hasRead);
+            }
+        }
+    }
+    public static void main(String[] args)
+            throws IOException
+    {
+        insert("InsertContent.java" , 45 , "插入的内容\r\n");
+    }
+```
+
+3. `BufferedInputStream` / `BufferedOutputStream` / `BufferedReader` / `BufferedWriter`  缓冲流也叫包装流，读取效率更高
 
    > 提高输入输出效率
 

@@ -1,6 +1,11 @@
-设置中打钩  类和目录迅速的对应<br>
-Autoscroll to source
-Autoscroll from source
+
+- 快捷键的设置
+    - File-setting-keymap  
+- 设置中打钩  类和目录迅速的对应
+    - Quick Documentation  Ctrl+Q  把鼠标放在类或方法的上面 快速查看它们的英文文档
+    
+    - Autoscroll to source
+    - Autoscroll from source
 <table>
 <thead>
 <tr>
