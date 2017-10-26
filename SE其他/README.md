@@ -28,6 +28,8 @@
 |InputStreamOutputStreamTest|使用文件字节流,一边读文件，一边写文件|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/io/InputStreamOutputStreamTest.java)|
 |RandomAccessFileTest|使用可读写文件,一边读文件，一边写文件|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/io/RandomAccessFileTest.java)|
 |ReadLineTest|使用缓冲字符流,快速读文件|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/io/ReadLineTest.java)|
+|Homework|从一个网页下载多张图片|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/io/Homework.java)|
+|FileTest|文件这个类的多个方法|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/io/FileTest.java)|
 
 
 - 学习文件英文源码 鼠标放在方法或类上 快捷键 ctrl+q

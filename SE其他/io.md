@@ -154,7 +154,7 @@ public static void main(String[] args)
 
    > 提高输入输出效率 加入缓冲的功能，主要用到这4个类
 
-   * `bufferedReader.readLine()`
+   * `bufferedReader.readLine() 一次读取一行`
    * BufferedInputStream(InputStream in)   创建一个 BufferedInputStream 并保存其参数，即输入流 in，以便将来使用。所以使用抽象方法的实现类做为参数；
    
 ```
@@ -238,36 +238,99 @@ public class DownloadImage {
    * `File` 指代文件 `file` 或目录 `directory`
    * `File` 不处理文件内容，只处理文件或目录的周边信息
    * `File` 常用方法
-     * `canRead`
-     * `canWrite`
-     * `createNewFile`
-     * `delete`
-     * `deleteOnExit`
-     * `getAbsoluteFile`
-     * `getAbsolutePath`
-     * `getName`
-     * `getParent`
-     * `getParentFile`
+     * `canRead  是否可读 windows下都可读`
+     * `canWrite  是否可写`
+     * `createNewFile 创建一个文件`
+     * `delete 删除文件`
+     * `deleteOnExit  程序执行完后把文件删除`
+     * `getAbsoluteFile 获取相对路径，返回一个文件`
+     * `getAbsolutePath  获取相对路径，返回一个文件的字符串路径`
+     * `getName 文件名`
+     * `getParent 父级 需指定绝对目录 否则可能为null `
+     * `getParentFile 返回一个文件`
      * `getPath`
-     * `getTotalSpace`
-     * `getUsableSpace`
-     * `isAbsolute`
+     * `getTotalSpace 返回分区空间的总大小`
+     * `getUsableSpace 可以空间大小`
+     * `isAbsolute 是否是绝对路径`
      * `isDirectory`
      * `isFile`
-     * `isHidden`
-     * `lastModified`
-     * `length`
-     * `list`
-     * `listFiles`
-     * `listRoots`
-     * `mkdir`
-     * `mkdirs`
-     * `renameTo`
-     * `setLastModified`
-     * `setReadable`
+     * `isHidden  是否是隐藏的`
+     * `lastModified 最后一次修改时间 返回时间毫秒值`
+     * `length 文件的字节数`
+     * `list 返回目录`
+     * `listFiles 返回文件的数组`
+     * `listRoots 根目录`
+     * `mkdir `
+     * `mkdirs   File file = new File("a/b/c");  多重目录` 
+     * `renameTo 改名`
+     * `setLastModified  设置最后一次修改时间`
+     * `setReadable 设置可读 就不能写入了` 
      * `setReadOnly`
      * `setWritable`
 
+- FileTest的实例代码
+
+```
+指定文件是绝对路径
+File file = new File("/Users/mingfei/IdeaProjects/JavaSE_20170902/data");
+指定文件是相对路径
+  File file = new File("Test.jpg");
+  
+  
+//        File file = new File(".idea");
+
+//        file.createNewFile();
+//
+//        System.out.println(file.isFile());
+//        System.out.println(file.isDirectory());
+//
+//        System.out.println(file.canRead());
+//        System.out.println(file.canWrite());
+
+//        file.delete();
+
+//        file.deleteOnExit();
+
+//        Thread.sleep(1000 * 10);
+
+//        System.out.println(file.getAbsoluteFile().toString());
+//        System.out.println(file.getAbsolutePath());
+//
+//        System.out.println(file.getName());
+//        System.out.println(file.getParent());
+//        System.out.println(file.getParentFile());
+//
+//        System.out.println(file.getTotalSpace());
+//        System.out.println(file.getUsableSpace());
+//
+//
+//        System.out.println(file.isAbsolute());
+//        System.out.println(file.isHidden());
+//
+//        System.out.println(new Date(file.lastModified()));
+//
+//        System.out.println(file.length());
+//
+//        for (File f : file.listFiles()) {
+//            System.out.println(f);
+//        }
+//
+//        for (File file1 : file.listRoots()) {
+//            System.out.println(file1);
+//        }
+
+    //////////
+
+
+    File file = new File("test.jpg");
+//        file.delete();
+//        System.out.println(file.mkdir()); // make directory
+//        System.out.println(file.mkdirs());
+
+//        file.setLastModified(-100000000000L);
+
+    System.out.println(new Date(file.lastModified()));
+```
 - File类的代码
 
 ```
@@ -338,4 +401,66 @@ public static void main(String[] args)
 			ioe.printStackTrace();
 		}
 	}
+```
+- 从一个网站下载多张图片  
+
+```
+public class Homework {
+//    psvm 弹出主方法  sout 输出的快捷键  iter 增强for循环  ctrl+shift+上下箭头 上下移动行
+private static final String HTML_URL = "http://jandan.net/page/";
+public static void main(String[] args) throws MalformedURLException {
+//        URL.openStream()
+//        BufferedReader.readLine()
+
+    for (int i = 1; i < 100; i++) {
+
+        URL url = new URL(HTML_URL + i);
+
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()))) { // InputStreamReader: inputStream => Reader
+            String line;
+            while ((line = reader.readLine()) != null) {
+            // 打开文件的源码  从源码中找地址
+                if (line.contains("<div class=\"thumbs_b\">")) {
+                    String imageUrl = "http:" + line.substring(line.indexOf("//img"), line.indexOf("!custom"));
+                    DownloadImage.download(imageUrl);
+                    System.out.println(imageUrl);
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+}
+}
+```
+- 从一个网站下载多张图片  调用的方法 DownloadImage.download(imageUrl);
+
+```
+private static int counter;
+    public static void download(String imageUrl){
+        try {
+            URL url = new URL(imageUrl);
+//            System.out.println(url.getFile());
+            try (
+                    BufferedInputStream inputStream = new BufferedInputStream(url.openStream());
+                    BufferedOutputStream outputStream = new BufferedOutputStream(new FileOutputStream("D:/tan/tan"+ (++counter) + ".jpg"))
+            ) {
+//                int i;
+//                while ((i = inputStream.read()) != -1) {
+//                    outputStream.write(i);
+//                }
+                // 8bit = 1byte  1个字节等于8个位
+                int i = inputStream.read();//这个向当于每次读出一个字节 也就是8个0或1的组合
+                while (i != -1) {
+                    outputStream.write(i); //字节逐个输入
+                    i = inputStream.read();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+    }
 ```
