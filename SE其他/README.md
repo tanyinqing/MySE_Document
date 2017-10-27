@@ -15,7 +15,7 @@
 |Test|异常|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/exception/Test.java)|
 |ThrowTest|如何主动抛出异常|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/exception/ThrowTest.java)|
 
-### 17.10.24,25项目 `数据流的四个抽象类`
+### 17.10.24,25，26项目 `数据流的四个抽象类`
 类|说明|链接|
 |---|---|---|
 |InputStreamTest|字节文件输入流|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/io/InputStreamTest.java)|

@@ -70,4 +70,115 @@
         - group                    
     
     
+- 匹配单个字符
+
+```
+System.out.println("\u0041\\\\");
+输出
+A\\
+```
+- 从大段的字符串中找到所有的电话号码
+
+```
+ public static void main(String[] args) {
+
+        // 使用字符串模拟从网络上得到的网页源码
+        String str = "我想求购一本《疯狂Java讲义》，尽快联系我13500006666"
+                + "交朋友，电话号码是13611125565"
+                + "出售二手电脑，联系方式15899903312";
+        // 创建一个Pattern对象，并用它建立一个Matcher对象
+        // 该正则表达式只抓取13X和15X段的手机号，
+        // 实际要抓取哪些电话号码，只要修改正则表达式即可。\\d 匹配0到9的所有数字
+        Matcher m = Pattern.compile("((13\\d)|(15\\d))\\d{8}")
+                .matcher(str);
+        // 将所有符合正则表达式的子串（电话号码）全部输出
+        while(m.find())//依次查找字符串中匹配的子串
+        {
+            System.out.println(m.group());
+        }
+    }
+```
+-  匹配所有的非单词字符
+
+```
+  public static void main(String[] args)
+    {
+        // 创建一个Pattern对象，并用它建立一个Matcher对象
+        String regStr = "Java is very easy!";
+        System.out.println("目标字符串是：" + regStr);
+//        匹配所有的非单词字符
+        Matcher m = Pattern.compile("\\w+")
+                .matcher(regStr);
+        while(m.find())
+        {
+            System.out.println(m.group() + "子串的起始位置："
+                    + m.start() + "，其结束位置：" + m.end());
+        }
+    }
     
+    输出结果
+    目标字符串是：Java is very easy!
+    Java子串的起始位置：0，其结束位置：4
+    is子串的起始位置：5，其结束位置：7
+    very子串的起始位置：8，其结束位置：12
+    easy子串的起始位置：13，其结束位置：17
+```
+- 判断一个字符串是不是一个有效的电子邮件地址
+
+```
+
+	public static void main(String[] args)
+	{
+		String[] mails =
+		{
+			"kongyeeku@163.com" ,
+			"kongyeeku@gmail.com",
+			"ligang@crazyit.org",
+			"wawa@abc.xx"
+		};
+		String mailRegEx = "\\w{3,20}@\\w+\\.(com|org|cn|net|gov)";
+		Pattern mailPattern = Pattern.compile(mailRegEx);
+		Matcher matcher = null;
+		for (String mail : mails)
+		{
+			if (matcher == null)
+			{
+				matcher = mailPattern.matcher(mail);
+			}
+			else
+			{  //matcher应用到一个新的字符串系列
+				matcher.reset(mail);
+			}
+			String result = mail + (matcher.matches() ? "是" : "不是")
+				+ "一个有效的邮件地址！";
+			System.out.println(result);
+		}
+	}
+```
+- 将所有匹配的字符串进行替换
+
+```
+ public static void main(String[] args)
+    {
+        String[] msgs =
+                {
+                        "Java has regular expressions in 1.4",
+                        "regular expressions now expressing in Java",
+                        "Java represses oracular expressions"
+                };
+        Pattern p = Pattern.compile(" re\\w*");
+        Matcher matcher = null;
+        for (int i = 0 ; i < msgs.length ; i++)
+        {
+            if (matcher == null)
+            {
+                matcher = p.matcher(msgs[i]);
+            }
+            else
+            {
+                matcher.reset(msgs[i]);
+            }
+            System.out.println(matcher.replaceAll("哈哈:)"));
+        }
+    }
+```
