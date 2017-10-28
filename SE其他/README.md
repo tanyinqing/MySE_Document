@@ -24,13 +24,24 @@
 |WriterTest|写一个文本类型的字符文件|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/io/WriterTest.java)|
 |InputStreamOutputStreamTest|一边读文件，一边写文件|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/io/InputStreamOutputStreamTest.java)|
 |BufferedTest|使用缓冲字节流比较快,一边读文件，一边写文件|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/io/BufferedTest.java)|
-|DownloadImage|使用缓冲字节流下载图片|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/io/DownloadImage.java)|
 |InputStreamOutputStreamTest|使用文件字节流,一边读文件，一边写文件|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/io/InputStreamOutputStreamTest.java)|
 |RandomAccessFileTest|使用可读写文件,一边读文件，一边写文件|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/io/RandomAccessFileTest.java)|
 |ReadLineTest|使用缓冲字符流,快速读文件|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/io/ReadLineTest.java)|
+|DownloadImage|使用缓冲字节流下载图片|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/io/DownloadImage.java)|
 |Homework|从一个网页下载多张图片|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/io/Homework.java)|
 |FileTest|文件这个类的多个方法|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/io/FileTest.java)|
 
+### 17.10.27 `学习反射的方法`
+类|说明|链接|
+|---|---|---|
+|Animals|定义的父类动物类|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/reflect/Animals.java)|
+|Human|定义的子类人类|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/reflect/Human.java)|
+|ConstructorsTest|利用反射机制得到构造器|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/reflect/ConstructorsTest.java)|
+|FieldsTest|利用反射机制得到所有的域|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/reflect/FieldsTest.java)|
+|MethodsTest|利用反射机制得到所有的方法|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/reflect/MethodsTest.java)|
+|ModifiersTest|利用反射机制得到所有的访问限定修饰符|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/reflect/ModifiersTest.java)|
+|Test|运用反射得到用default修饰的隐藏类|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/reflect/Test.java)|
+|ListTest|得到某一个盘符下的所有文件名|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/reflect/ListTest.java)|
 
 - 学习文件英文源码 鼠标放在方法或类上 快捷键 ctrl+q
 ```
