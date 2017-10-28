@@ -11,7 +11,7 @@
         - 非静态内部类        
         ```java
         //外部类   
-         class Out {   
+         class Out {   //内部了适应了默认修饰符  包外无法访问
              private int age = 12;   
         
              //内部类   
@@ -119,7 +119,7 @@
         ```
 
         ```java
-        // 使用匿名内部类的情况
+        // 使用匿名内部类的情况  可以作为回调方法使用
 
         abstract class Person {
             public abstract void eat();

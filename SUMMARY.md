@@ -1,6 +1,9 @@
 # Summary
 
 * [Java - Big Data Engineer Training](README.md)
+* [精简Database](my_database/README.md)
+   * [mysql](my_database/mysql.md)
+   * [sql](my_database/sql.md)
 * [SE 其他](SE其他/README.md)
    * [泛型](SE其他/generics.md)
    * [异常处理](SE其他/exception.md)
@@ -56,6 +59,22 @@
    * [输入两个正整数m和n求其最大公约数和最小公倍数](练习题/输入两个正整数m和n求其最大公约数和最小公倍数.md)
 * [常用代码](常用代码/README.md)
    * [统计程序运行的时间](常用代码/统计程序运行的时间.md)
-
+* [JavaScript](javascript/README.md)
+   * [引言](javascript/intro.md)
+   * [练习题](javascript/exercise.md)
+* [jQuery](jquery/README.md)
+   * [练习题](jquery/exercise.md)
+* [Database](database/README.md)
+   * [引言](database/intro.md)
+   * [环境配置](database/install.md)
+   * [设计](database/design.md)
+   * [SQL 练习题](database/exercise_sql_i.md)
+   * [设计练习题](database/exercise_design.md)
+   * [课外题](database/project.md)
+* [MISC](misc/README.md)
+   * [IDEA](misc/idea.md)
+   * [Git](misc/git.md)
+   * [Github](misc/github.md)
+   * [Gradle](misc/gradle.md)
    
 

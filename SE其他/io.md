@@ -1,4 +1,7 @@
-# Chapter 7 Stream & File  数据流 有向流动的数据
+# Chapter 7 Stream & File  数据流 有向流动的数据  
+- 存储路径有相对路径和绝对路径 
+    - 相对路径，只有名称，路径是相对于当前路径而定的
+    - 绝对路径，是标明了在跟目录的某个位置
 
 1. `InputStream 输入流` / `OutputStream 输出流` / `Reader` / `Writer`  读取文件是一个字节一个字节读取的
 
