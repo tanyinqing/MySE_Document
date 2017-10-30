@@ -2,12 +2,12 @@
 
 > Java is a multi-threaded programming language
 
-1. Process and thread
-    - A process is an execution of a program and a thread is a single execution of work within the process. 
-    - A process can contain multiple threads. 
-    - A thread is also known as a lightweight process.
-
-2. Thread lifecycle
+1. Process and thread 进程和线程 多线程效率高
+    - 进程是一个程序的执行过程类似一个容器。A process is an execution of a program and a thread is a single execution of work within the process. 
+    - 线程执行程序的单元。A process can contain multiple threads. 
+    - 程序分单线程和多线程A thread is also known as a lightweight process.
+    - cpu 时间片段，线程多，占的片段就更多了。
+2. Thread lifecycle 生命周期
     - 新建 `New`
     - 就绪 `Runnable`
     - 运行 `Running`
@@ -22,15 +22,15 @@
     
     <img src="../image/javase/thread_states.png">
     
-3. Implementation
-    - Extend `Thread` class
+3. Implementation实例
+    - Extend `Thread` class  继承
         
         ```
         public class MT1 extends Thread {
         
             public static void main(String[] args) {
                 MT1 mt1 = new MT1();
-                mt1.start();
+                mt1.start();//线程开启
                 System.out.println("test...");
             }
         
@@ -60,10 +60,12 @@
         
     - Implement `Runnable` interface
     
-        ```java
+        ```
+        //实现了接口
         public class MT2 implements Runnable {
             public static void main(String[] args) {
                 MT2 mt2 = new MT2();
+                //参数是Runnable接口的实现类
                 Thread thread = new Thread(mt2);
                 thread.start();
                 System.out.println("test...");
@@ -78,7 +80,7 @@
         }
         ```
         
-4. join
+4. join 合并加入
 
     ```java
     public class MT4 implements Runnable {
@@ -90,7 +92,7 @@
             thread.start();
     
             try {
-                thread.join();
+                thread.join();//并入主线程 就变成单线程了
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -101,8 +103,9 @@
         @Override
         public void run() {
             for (int i = 0; i < 3; i++) {
+             //获取当前线程的命名
                 System.out.println(Thread.currentThread().getName() + " is running...");
-                try {
+                try {//线程睡眠
                     Thread.sleep(1000 * 3);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
@@ -112,6 +115,7 @@
     }
 
     ```
+- windows 一个新线程默认占内存1M
     
     ```java
     public class MT5 implements Runnable {
@@ -129,11 +133,11 @@
             thread2.start();
     
             try {
-                thread2.join();
+                thread2.join(); //并入主线程
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-    
+    // thread2 main threa3
             thread3.start();
     
             System.out.println("test...");
@@ -151,6 +155,19 @@
             }
         }
     }
+  
+  //运行结果  thread 2并入主线程后，先执行thread 2中的内容，在执行主线程中thread 2下面的内容
+// thread 2执行完后  thread 3才开始准备就绪
+thread 1 is running...
+thread 2 is running...
+thread 1 is running...
+thread 2 is running...
+thread 1 is running...
+thread 2 is running...
+test...
+thread 3 is running...
+thread 3 is running...
+thread 3 is running...
     ```
     
 5. yield `[jiːld] `    

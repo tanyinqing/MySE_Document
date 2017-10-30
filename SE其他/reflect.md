@@ -1,4 +1,4 @@
-# 补2. 反射 `Reflect`
+# 补2. 反射 `Reflect` 框架中用的比较多
 
 > 比较高级的特性 Reflection: This is a relatively advanced feature and should be used only by developers who have a strong grasp of the fundamentals of the language.
 
@@ -63,7 +63,7 @@ public static void main(String[] args) {
 
 3. java.lang.Class  获得类对象的方法
     - ClassName.class;
-    - instance.getClass();
+    - instance.getClass();  instance是个实例
     - Class.forName(String className);
     
     ```
