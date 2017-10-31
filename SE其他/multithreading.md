@@ -17,7 +17,7 @@
         - 其他阻塞
             - I/O
             - Sleep
-            - Join
+            - Join  并入主线程
     -  死亡   `Dead`
     
     <img src="../image/javase/thread_states.png">
@@ -117,7 +117,7 @@
     ```
 - windows 一个新线程默认占内存1M
     
-    ```java
+```
     public class MT5 implements Runnable {
     
         public static void main(String[] args) {
@@ -168,9 +168,9 @@ test...
 thread 3 is running...
 thread 3 is running...
 thread 3 is running...
-    ```
+```
     
-5. yield `[jiːld] `    
+5. yield `[jiːld] 线程的静态方法 `    
 
     ```java
     public class MT6 implements Runnable {
@@ -192,22 +192,24 @@ thread 3 is running...
             for (int i = 0; i < 100; i++) {
                 System.out.println(i + ": " + Thread.currentThread().getName() + " is running...");
                 if (i % 10 == 0) {
-                    Thread.yield();
+                 //每10次，线程交换执行
+                    Thread.yield();//放弃当前时间片 重新进入就绪状态
                 }
             }
         }
     }
     ```
 
-6. Thread priority
-    - `MIN_PRIORITY` 1
+6. Thread priority 线程的优先级 越大执行机会越多 预期不太起作用
+    - `MIN_PRIORITY` 1  最小优先级
     - `MAX_PRIORITY` 10
-    - `NORMAL_PRIORITY` 5
+    - `NORMAL_PRIORITY` 5 默认的优先级 
     
     ```java
     public class ThreadPriority implements Runnable {
         @Override
         public void run() {
+         // s缓存当前线程的名称和优先级
             System.out.println("running thread: " + Thread.currentThread().getName());
             System.out.println("thread priority: " + Thread.currentThread().getPriority());
         }
@@ -232,84 +234,116 @@ thread 3 is running...
     }
     ```
     
-7. Synchronization
-    - synchronization method
-    - synchronization block
+7. Synchronization 同步的 修饰关键字
+    - synchronization method  同步方法
+    - synchronization block  同步的块
+    - HashMap 非同步的类 单线程使用 Hashtable 同步的 应用多线程
+    - stringbuilder 非同步的 单线程用 快一些 Stringbuffer 同步的应用多线程
     
     - `synchronized` 作用域
         - 对象 / 实例 范围
           
           > 一个线程只能访问一个对象的 synchronized 方法，但其他线程可以访问另一个对象的同一方法
           
-        - 类范围
+        - 类范围  也就是静态的方法
               
           > 一个线程只能访问一个类的一个 synchronized static 方法，对这个类的所有对象都适用
     
     ```java
-    public class Synchronization {
-        public static void main(String[] args) {
-            Output output = new Output();
-            Library library = new Library(output);
-            University university = new University(output);
-    
-            library.start();
-            university.start();
-        }
-    }
-    
-    class Output {
-        public synchronized void print(String s) {
-            System.out.println(s);
-            try {
-                Thread.sleep(1000*5);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-    
-        public void scan(String s) {
-            synchronized (s) {
-                try {
-                    s.wait(1000*5);
-                    System.out.println("scan: " + s);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-    }
-    
-    class Library extends Thread {
-    
-        private Output output;
-    
-        public Library(Output output) {
-            this.output = output;
-        }
-    
-        @Override
-        public void run() {
-            output.print("library print...");
-    //        output.scan("library print...");
-        }
-    }
-    
-    class University extends Thread {
-        private Output output;
-    
-        public University(Output output) {
-            this.output = output;
-        }
-    
-        @Override
-        public void run() {
-            output.print("University print...");
-    //        output.scan("University print...");
-        }
-    }
+   public class Synchronization {
+       public static void main(String[] args) {
+           Food water = new Food("water");
+           //        Food fish = new Food("fish");
+           //        Food bone = new Food("bone");
+   
+           Cat cat = new Cat("kitty", water);
+           Dog dog = new Dog("tiger", water);
+   
+           cat.start();
+           dog.start();
+       }
+   }
+   //一共3个类
+   class Food {
+       private String name;
+   
+       Food(String name) {
+           this.name = name;
+       }
+   //同步的方法
+       synchronized void eat1() {
+           System.out.println(Thread.currentThread().getName() + " is eating " + name);
+           try {
+               Thread.sleep(1000 * 5);
+           } catch (InterruptedException e) {
+               e.printStackTrace();
+           }
+       }
+   //大家可以同时访问
+       void eat2() {
+        //同步的块  同一时刻只能一个线程访问
+           synchronized (this) {
+               System.out.println(Thread.currentThread().getName() + " is eating " + name);
+               try {
+                   Thread.sleep(1000 * 5);
+               } catch (InterruptedException e) {
+                   e.printStackTrace();
+               }
+           }
+        //可能有其他代码 可以同时访问
+       }
+   //静态的同步方法 只能调用静态的变量  不同的对象依旧是不能同时访问
+       synchronized static void eat3() {
+           System.out.println(Thread.currentThread().getName() + " is eating...");
+           try {
+               Thread.sleep(1000 * 5);
+           } catch (InterruptedException e) {
+               e.printStackTrace();
+           }
+       }
+   }
+   
+   class Cat extends Thread {
+       private Food food;
+   
+       Cat(String name, Food food) {
+           super(name);
+           this.food = food;
+       }
+   
+       @Override
+       public void run() {
+           food.eat1();//访问eat1的方法
+   //        food.eat2();
+   //        food.eat3();
+       }
+   }
+   
+   class Dog extends Thread {
+       private Food food;
+   
+       Dog(String name, Food food) {
+           super(name);
+           this.food = food;
+       }
+   
+       @Override
+       public void run() {
+           food.eat1();//访问eat1的方法
+   //        food.eat2();
+   //        food.eat3();
+       }
+   }
+
     ```
+- 运行结果  同时喝水  分先后顺序
+
+```
+kitty is eating water
+tiger is eating water
+```
  
-8. `wait` `notify` `notifyAll`
+8. `wait` `notify` `notifyAll`  线程通信
     
     >  来自 `Object` 类，线程间通讯的方式
 

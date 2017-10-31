@@ -43,6 +43,12 @@
 |Test|运用反射得到用default修饰的隐藏类|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/reflect/Test.java)|
 |ListTest|得到某一个盘符下的所有文件名|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/reflect/ListTest.java)|
 
+### 17.10.28 `学习多线程的方法`
+类|说明|链接|
+|---|---|---|
+|||[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/multithreading/ListTest.java)|
+
+
 - 学习文件英文源码 鼠标放在方法或类上 快捷键 ctrl+q
 ```
  // 将读取的数据写入临时文件
