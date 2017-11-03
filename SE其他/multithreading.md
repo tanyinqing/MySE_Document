@@ -9,8 +9,8 @@
     - cpu 时间片段，线程多，占的片段就更多了。
 2. Thread lifecycle 生命周期
     - 新建 `New`
-    - 就绪 `Runnable`
-    - 运行 `Running`
+    - 就绪 `Runnable stat之后`
+    - 运行 `Running  获得时间片`
     - 阻塞 `Blocked`
         - 等待阻塞 `Waiting`
         - 同步阻塞 `Blocked on synchronization`
@@ -58,7 +58,7 @@
             9
         ```
         
-    - Implement `Runnable` interface
+    - Implement `Runnable` interface 推荐的方式
     
         ```
         //实现了接口
@@ -80,7 +80,7 @@
         }
         ```
         
-4. join 合并加入
+4. join 合并加入主线程 
 
     ```java
     public class MT4 implements Runnable {
@@ -170,7 +170,7 @@ thread 3 is running...
 thread 3 is running...
 ```
     
-5. yield `[jiːld] 线程的静态方法 `    
+5. yield `[jiːld] 线程的静态方法 `   让出时间片，进入就绪状态 
 
     ```java
     public class MT6 implements Runnable {
@@ -234,7 +234,7 @@ thread 3 is running...
     }
     ```
     
-7. Synchronization 同步的 修饰关键字
+7. Synchronization 同步的 修饰关键字 只有单线程可以访问
     - synchronization method  同步方法
     - synchronization block  同步的块
     - HashMap 非同步的类 单线程使用 Hashtable 同步的 应用多线程
@@ -343,7 +343,9 @@ kitty is eating water
 tiger is eating water
 ```
  
-8. `wait` `notify` `notifyAll`  线程通信
+8. `wait` `notify` `notifyAll`  线程通信 
+
+- 同一个类的实例应用在多个线程同步块中，为保证同步使用 
     
     >  来自 `Object` 类，线程间通讯的方式
     
@@ -356,14 +358,14 @@ tiger is eating water
                 this.num = num;
                 this.lock = lock;
             }
-    
+     // 1 2交替执行
             public void run() {
                 try {
                     while (true) {
-                        synchronized (lock) {
+                        synchronized (lock) {//进来的线程会获得同步锁
                             System.out.println(num);
-                            lock.notify();
-                            lock.wait();
+                            lock.notify();//唤醒其他线程
+                            lock.wait();//阻塞状态
                         }
                     }
                 } catch (InterruptedException e) {
@@ -381,6 +383,8 @@ tiger is eating water
                 thread2.start();
             }
         }
+        
+        输出结果 1 2交替输出
         ```
         实际的例子
      
@@ -469,4 +473,101 @@ tiger is eating water
                                  |                  |
                                  +------------------+
 
+   ```
+   
+   - 应用实例代码
+   
+   ```
+   package cn.edu.tsinghua.javase.multithreading;
+   
+   
+   import java.util.Vector;
+   
+   // http://www.infoq.com/cn/articles/producers-and-consumers-mode
+   public class ProducerConsumerSolution {
+       public static void main(String args[]) {
+           Vector<Integer> sharedQueue = new Vector<>();
+           int size = 10;
+           //两个线程操作同一个实例
+           Thread producer = new Thread(new Producer(sharedQueue, size), "Producer");
+           Thread consumer = new Thread(new Consumer(sharedQueue), "Consumer");
+           producer.start();
+           consumer.start();
+       }
+   }
+   
+   class Producer implements Runnable {
+       private final Vector<Integer> sharedQueue;
+       private final int SIZE;
+   
+       Producer(Vector<Integer> sharedQueue, int size) {
+           this.sharedQueue = sharedQueue;
+           this.SIZE = size;
+       }
+   
+       @Override
+       public void run() {
+           for (int i = 0;i<30; i++) {
+               try {
+                   produce(i);
+                   System.out.println("Produced: " + i);
+               } catch (InterruptedException e) {
+                   e.printStackTrace();
+               }
+   
+           }
+       }
+   
+       private void produce(int i) throws InterruptedException {
+           while (sharedQueue.size() == SIZE) {
+               synchronized (sharedQueue) {
+                   System.out.println("Queue is full " + Thread.currentThread().getName()
+                           + " is waiting , size: " + sharedQueue.size());
+                   sharedQueue.wait();
+               }
+           }
+   
+           synchronized (sharedQueue) {
+               sharedQueue.add(i);
+               sharedQueue.notifyAll();
+           }
+       }
+   }
+   
+   class Consumer implements Runnable {
+       private final Vector sharedQueue;
+   
+       Consumer(Vector sharedQueue) {
+           this.sharedQueue = sharedQueue;
+       }
+   
+       @Override
+       public void run() {
+           while (true) {
+               try {
+                   System.out.println("Consumed: " + consume());
+                   Thread.sleep(50);
+               } catch (InterruptedException e) {
+                   e.printStackTrace();
+               }
+           }
+       }
+   
+       private int consume() throws InterruptedException {
+           while (sharedQueue.isEmpty()) {
+               synchronized (sharedQueue) {
+                   System.out.println("Queue is empty " + Thread.currentThread().getName()
+                           + " is waiting, size: " + sharedQueue.size());
+   
+                   sharedQueue.wait();
+               }
+           }
+   
+           synchronized (sharedQueue) {
+               sharedQueue.notifyAll();
+               return (Integer) sharedQueue.remove(0);
+           }
+       }
+   }
+  
    ```

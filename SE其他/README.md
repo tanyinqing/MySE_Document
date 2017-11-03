@@ -46,7 +46,23 @@
 ### 17.10.28 `学习多线程的方法`
 类|说明|链接|
 |---|---|---|
-|||[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/multithreading/ListTest.java)|
+|MT1|通过继承类来实现多线程|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/multithreading/MT1.java)|
+|MT2|通过继承接口来实现多线程|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/multithreading/MT2.java)|
+|MT4|子线程并入主线程|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/multithreading/MT4.java)|
+|MT5|多个线程交换执行|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/multithreading/MT5.java)|
+|MT6|线程让出时间片|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/multithreading/MT6.java)|
+|ObjectTest|线程间针对同一对象操作时相互通信|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/multithreading/ObjectTest.java)|
+|OutputThread|线程间针对同一对象操作时相互通信|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/multithreading/OutputThread.java)|
+|ProducerConsumerSolution|消费者和生成者的关系|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/multithreading/ProducerConsumerSolution.java)|
+|Synchronization|线程的同步锁，同一时间只有一个线程可以执行|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/multithreading/Synchronization.java)|
+|ThreadPriority|线程的优先级|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/multithreading/ThreadPriority.java)|
+
+### 17.11.03 `对象的序列化`
+类|说明|链接|
+|---|---|---|
+|User|定义一个标准对象|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/serializable/User.java)|
+|OutputTest|把对象写成一个文件|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/serializable/OutputTest.java)|
+|InputTest|从文件读出一个对象|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/serializable/InputTest.java)|
 
 
 - 学习文件英文源码 鼠标放在方法或类上 快捷键 ctrl+q
