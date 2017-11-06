@@ -343,7 +343,7 @@ kitty is eating water
 tiger is eating water
 ```
  
-8. `wait` `notify` `notifyAll`  线程通信 
+8. `wait` `notify` `notifyAll`  线程通信 线程有三种状态就绪 运行 阻塞，就是在三种状态之间不断转化
 
 - 同一个类的实例应用在多个线程同步块中，为保证同步使用 
     
@@ -413,9 +413,9 @@ tiger is eating water
         ```
     
         - 当前线程阻塞
-        - 等待其他线程调用 `notify` 或 `notifyAll`
-        - 调用后，当前线程释放锁
-        - 被唤醒后，重新竞争锁
+        - 等待其他线程调用 `notify` 或 `notifyAll` 也就是进入阻塞状态
+        - 调用后，当前线程释放锁 进入就绪状态
+        - 被唤醒后，重新竞争锁 也就是进入就绪状态
         - 调用 `wait` 时，线程必须获得对象级别锁，即，在同步方法或同步块中
         - 如果调用时没有锁，抛 `IllegalMonitorStateException` 运行时异常
         
