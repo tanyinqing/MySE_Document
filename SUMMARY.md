@@ -34,6 +34,7 @@
    * [封装和访问限定修饰符](SE面向对象/封装和访问限定修饰符.md)
    * [多态polymorphism](SE面向对象/多态polymorphism.md)
 * [其他](其他/README.md)
+   * [盲打指法练习](其他/盲打指法练习.md)
    * [生成个人文档](其他/生成个人文档.md)
    * [Gradle报错](其他/Gradle报错.md)
    * [idea快捷键](其他/idea快捷键.md)

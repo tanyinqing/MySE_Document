@@ -1,3 +1,4 @@
+### 如果一种功能的代码，你从来没有敲过，那么你永远多学不会，当你真正自己能会的时候，你在采用复制来提高效率。
 # 学习的方法是：将代码贴在讲义的下面，如果讲义比较多的话，就把讲义分成小节。
 
 ### 17.10.20项目  泛型地址   https://github.com/tanyinqing/JavaSE_20170902
@@ -63,6 +64,14 @@
 |User|定义一个标准对象|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/serializable/User.java)|
 |OutputTest|把对象写成一个文件|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/serializable/OutputTest.java)|
 |InputTest|从文件读出一个对象|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/serializable/InputTest.java)|
+
+### 17.11.03 `内部类`
+类|说明|链接|
+|---|---|---|
+|demo1|非静态内部类|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/Inner/Demo1.java)|
+|demo2|静态内部类|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/Inner/Demo2.java)|
+|demo3|局部内部类|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/Inner/demo3.java)|
+|demo4|匿名内部类|[地址](https://github.com/tanyinqing/JavaSE_20170902/blob/master/src/main/java/cn/edu/tsinghua/javase/Inner/Demo4.java)|
 
 
 - 学习文件英文源码 鼠标放在方法或类上 快捷键 ctrl+q
