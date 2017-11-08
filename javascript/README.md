@@ -5,6 +5,12 @@
 |---|---|---|
 |1_hello.html|初步认识JavaScript|[地址](https://github.com/tanyinqing/JavaScript_20170902/blob/master/1_hello.html)|
 |2_getElementById.html|根据id获取h5中的元素|[地址](https://github.com/tanyinqing/JavaScript_20170902/blob/master/2_getElementById.html)|
+|1_test|JavaScript输出|[地址](https://github.com/tanyinqing/JavaScript_20170902/blob/master/day2/1_test.html)|
+|2_variable|JavaScript变量|[地址](https://github.com/tanyinqing/JavaScript_20170902/blob/master/day2/2_variable.html)|
+|3_array|JavaScript数组|[地址](https://github.com/tanyinqing/JavaScript_20170902/blob/master/day2/3_array.html)|
+|4_object|JavaScript的对象|[地址](https://github.com/tanyinqing/JavaScript_20170902/blob/master/day2/4_object.html)|
+|5_function|JavaScript的函数|[地址](https://github.com/tanyinqing/JavaScript_20170902/blob/master/day2/5_function.html)|
+|6_for-in|JavaScript遍历|[地址](https://github.com/tanyinqing/JavaScript_20170902/blob/master/day2/6_for-in.html)|
 
 # JavaScript
 
@@ -34,3 +40,10 @@
 - 动物出版社  JavaScript权威指南 这本书
 - ECMA 欧洲计算机标准协会
 - ECMA-262 是 JavaScript 标准的官方名称。
+
+- 动态模板设置 live template console.log($END$);  console.log(); cl
+
+![动态模板设置](../image/javascript/动态模板设置.jpg)
+- 控制台位置设置
+
+![控制台位置设置](../image/javascript/控制台位置.jpg)
