@@ -2,7 +2,7 @@
 
 * [Java - Big Data Engineer Training](README.md)
 * [精简Database](my_database/README.md)
-   * [mysql](my_database/mysql.md)
+   * [mysql个人总结的sql语句](my_database/mysql.md)
    * [sql](my_database/sql.md)
 * [SE 其他](SE其他/README.md)
    * [泛型](SE其他/generics.md)
