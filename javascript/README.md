@@ -29,6 +29,9 @@
 |7_clock|做一个时间秒表|[地址](https://github.com/tanyinqing/JavaScript_20170902/blob/master/day3/7_clock.html)|
 |8_time_remaind|一个人还能活多长时间|[地址](https://github.com/tanyinqing/JavaScript_20170902/blob/master/day3/8_time_remaind.html)|
 |9_math|随机数|[地址](https://github.com/tanyinqing/JavaScript_20170902/blob/master/day3/9_math.html)|
+|10_Array|数组对象的方法|[地址](https://github.com/tanyinqing/JavaScript_20170902/blob/master/day3/10_Array.html)|
+|11_boolean|逻辑对象的方法|[地址](https://github.com/tanyinqing/JavaScript_20170902/blob/master/day3/11_boolean.html)|
+|12_RegExp|正则表达式的用法|[地址](https://github.com/tanyinqing/JavaScript_20170902/blob/master/day3/12_RegExp.html)|
 
 
 # JavaScript
