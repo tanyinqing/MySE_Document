@@ -1,7 +1,14 @@
-<center><h1 style="magrin-bottom:500px;text-align:center;font-size:50px;">Java - 大数据工程师培训</h1></center>
-<center><h2 style="magrin-bottom:500px;text-align:center;font-size:30px;">阶段一 - 基础技术模块</h2></center>
 
-<center><h6 style="magrin-bottom:500px;text-align:center;font-size:12px;">2017年9月</center>
+### 项目清单
+|名称|描述|地址|
+|---|---|---|
+|MySE_Document|个人的学习笔记|[地址](https://github.com/tanyinqing/MySE_Document)|
+|JavaScript_20170902|JavaScript的学习笔记|[地址](https://github.com/tanyinqing/JavaScript_20170902)|
+|JavaSE_20170902|JavaSE的学习笔记|[地址](https://github.com/tanyinqing/JavaSE_20170902)|
+|Bootstrap_20170902|前端框架Bootstrap的学习笔记|[地址](https://github.com/tanyinqing/Bootstrap_20170902)|
+|CSS_20170902|CSS的学习笔记|[地址](https://github.com/tanyinqing/CSS_20170902)|
+|HTML_20170902|HTML的学习笔记|[地址](https://github.com/tanyinqing/HTML_20170902)|
+
 
 - 学习方法总结
   - 远程的学习
