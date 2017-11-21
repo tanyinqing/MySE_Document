@@ -8,6 +8,7 @@
 |Bootstrap_20170902|前端框架Bootstrap的学习笔记|[地址](https://github.com/tanyinqing/Bootstrap_20170902)|
 |CSS_20170902|CSS的学习笔记|[地址](https://github.com/tanyinqing/CSS_20170902)|
 |HTML_20170902|HTML的学习笔记|[地址](https://github.com/tanyinqing/HTML_20170902)|
+|jQuery_20170902|jquery库的使用|[地址](https://github.com/tanyinqing/jQuery_20170902)|
 
 
 - 学习方法总结
