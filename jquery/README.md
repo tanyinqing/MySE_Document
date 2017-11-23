@@ -1,5 +1,5 @@
 
-### 项目清单列表
+### 项目清单列表  教程的地址  http://w3school.com.cn/jquery/
 |名称|说明|地址|
 |---|---|---|
 |jQuery_20170902|这个是项目的地址|[地址](https://github.com/tanyinqing/jQuery_20170902)|
