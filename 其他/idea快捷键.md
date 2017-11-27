@@ -1,3 +1,5 @@
+
+- 抽取变量 extract varable  ctrk+alt+v 
 > zen code 前端快捷方式  一种快速编写HTML/CSS代码的方法
 
 div#box1+tab
