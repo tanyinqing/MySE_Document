@@ -4,11 +4,13 @@
 
 > MySQL (mysql-5.6.35-win64.zip)
 
-1. Unzip zip file to your_mysql_directory/
+1. Unzip zip file to your_mysql_directory/    解压缩到D盘根目录下  重命名 mysql
 
-2. Edit configuration file
+2. Edit configuration file  配置文件更改 引擎支持 UTF-8编码
 	
-    > your_mysql_directory/my.ini (rename my-default.ini to my.ini )
+    > your_mysql_directory/my.ini (rename my-default.ini to my.ini )  
+    
+    > my-default.ini文件改名字为my.ini  文件的内容用下面的覆盖
 
   ```
   [client]
@@ -38,7 +40,18 @@
 
   (if your_mysql_directory include spaces,use double quotation marks)
   ```
+这个是自己的操作过程
+```
+D:\mysql> cd bin
 
+D:\mysql\bin> mysqld --install mysql --defaults-file=d:\mysql\my.ini
+
+D:\mysql\bin> net start mysql
+
+D:\mysql\bin> mysql -u root -p
+
+密码：回车
+```
 4. Start / stop MySQL
 
   ```
@@ -47,8 +60,8 @@
   or:
 
   cmd
-  net start your_mysql_service_name
-  net stop your_mysql_service_name
+  net start your_mysql_service_name   启动服务  net start mysql
+  net stop your_mysql_service_name   
   ```
 
 5. Update MySQL password
@@ -56,7 +69,7 @@
   > cmd `your_mysql_directory/bin`
     
   ```sql
-  mysql -u root -p
+  mysql -u root -p  开启数据库  密码没有就点回车  此命令在数据库的跟目录下进行。
 
   update mysql.user set password = PASSWORD('your_new_password') where user='root';
   flush privileges;
@@ -70,11 +83,11 @@
   # update root password...
   ```
 	
-6. Check configuration
+6. Check configuration  检查你的配置是否正确
   
   ```sql    
-  mysql> show variables like 'char%';
-  mysql> show variables like 'coll%';
+  mysql> show variables like 'char%';      查看字符编码是否是utf-8
+  mysql> show variables like 'coll%';    查看字符编码是否是utf-8
   ```
 
 7. Delete service
@@ -83,7 +96,7 @@
   SC delete your_mysql_service_name
   ```
 
-8. Dump data
+8. Dump data  转储数据
      
   > cmd `your_mysql_directory/bin`
 
@@ -98,7 +111,7 @@
   mysql> source your_dump_file_name.sql
   ```
  
-## MAC OS X
+## MAC OS X    苹果电脑的安装方式
  
 > MySQL tar.gz install in MAC yosemite 10.10.2
 
@@ -213,3 +226,10 @@
                         &autoReconnect=true
                         &rewriteBatchedStatements=TRUE
   ```
+### 个人笔记 软件连接数据库
+- View - Tool Windows - Database
+- Data Source - MySQL 
+    - User:root
+    - Password: 无就不用填
+    - Test Connection
+    - OK 就可以了 

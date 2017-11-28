@@ -2,22 +2,22 @@
 
 1. 历史发展
     - 人工管理
-    - 文件管理
-        - 超大规模数据
-    - 数据库
+    - 文件管理 比如谷歌文件系统
+        - 超大规模数据 一亿条数据以上
+    - 数据库 安全性好
         - 不适于超大规模数据
-        - 不适于超大规模并发
-2. DBMS
-  - Oracle
-  - MySQL /maɪ ˌɛskjuːˈɛl/
-  - SQL Server
-  - `MongoDB`
+        - 不适于超大规模并发 同一时刻同时访问的人数
+2. DBMS  Datavase Management system
+  - Oracle  甲骨文公司开发
+  - MySQL /maɪ ˌɛskjuːˈɛl/  RDBMS Relatiional 关系型数据库
+  - SQL Server  微软公司开发
+  - `MongoDB`  No-SQL
   - PostgreSQL
   - DB2
   - Access
   - `Cassandra`
   - `Redis`
-  - SQLite
+  - SQLite  手机中使用
   - `Elasticsearch`
   - SAP Adaptive Server
   - Teradata
@@ -37,7 +37,7 @@
     
     > Entity Relationship
     
-  - NoSQL
+  - NoSQL  都不使用SQL语言
     
     > key - value / 文档 / 列存储 / 图型 / XML
     

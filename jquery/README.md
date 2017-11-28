@@ -1,4 +1,6 @@
 
+项目地址 https://github.com/tanyinqing/jQuery_20170902
+
 ### day1  教程的地址  http://w3school.com.cn/jquery/
 |名称|说明|地址|
 |---|---|---|
@@ -21,13 +23,22 @@
 |7_create|通过 jQuery，可以很容易地添加新元素/内容。|[地址](https://github.com/tanyinqing/jQuery_20170902/blob/master/day2/7_create.html)|
 |8_remove-empty|通过 jQuery，可以很容易地删除已有的 HTML 元素|[地址](https://github.com/tanyinqing/jQuery_20170902/blob/master/day2/8_remove-empty.html)|
 
-### day2  教程的地址  http://w3school.com.cn/jquery/
+### day3  教程的地址  http://w3school.com.cn/jquery/
 |名称|说明|地址|
 |---|---|---|
 |1_css|jQuery - 获取并设置 CSS 类|[地址](https://github.com/tanyinqing/jQuery_20170902/blob/master/day3/1_css.html)|
 |2_width_height|通过 jQuery，很容易处理元素和浏览器窗口的尺寸|[地址](https://github.com/tanyinqing/jQuery_20170902/blob/master/day3/2_width_height.html)|
 |3_traversing|jQuery 遍历 - 祖先  和后代|[地址](https://github.com/tanyinqing/jQuery_20170902/blob/master/day3/3_traversing.html)|
 |4_siblings|jQuery 遍历 - 同胞|[地址](https://github.com/tanyinqing/jQuery_20170902/blob/master/day3/4_siblings.html)|
+
+### day4  教程的地址  http://w3school.com.cn/jquery/
+|名称|说明|地址|
+|---|---|---|
+|1_event|事件|[地址](https://github.com/tanyinqing/jQuery_20170902/blob/master/day4/1_event.html)|
+|2_blur|事件控件失去焦点|[地址](https://github.com/tanyinqing/jQuery_20170902/blob/master/day4/2_blur.html)|
+|3_bind|一个按钮绑定多个事件|[地址](https://github.com/tanyinqing/jQuery_20170902/blob/master/day4/3_bind.html)|
+|4_delegate| 代理事件 给未来元素添加事件|[地址](https://github.com/tanyinqing/jQuery_20170902/blob/master/day4/4_delegate.html)|
+|5_preventDefault|防止链接打开 URL   阻止事件的默认操作|[地址](https://github.com/tanyinqing/jQuery_20170902/blob/master/day4/5_preventDefault.html)|
 
 - 文档就绪函数 保证文档全部加载后执行函数
 ```

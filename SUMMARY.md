@@ -74,6 +74,7 @@
    * [SQL 练习题](database/exercise_sql_i.md)
    * [设计练习题](database/exercise_design.md)
    * [课外题](database/project.md)
+   * [项目进度表](database/项目进度表.md)
 * [MISC](misc/README.md)
    * [IDEA](misc/idea.md)
    * [Git](misc/git.md)
