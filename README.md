@@ -3,12 +3,13 @@
 |名称|描述|地址|
 |---|---|---|
 |MySE_Document|个人的学习笔记|[地址](https://github.com/tanyinqing/MySE_Document)|
-|JavaScript_20170902|JavaScript的学习笔记|[地址](https://github.com/tanyinqing/JavaScript_20170902)|
-|JavaSE_20170902|JavaSE的学习笔记|[地址](https://github.com/tanyinqing/JavaSE_20170902)|
-|Bootstrap_20170902|前端框架Bootstrap的学习笔记|[地址](https://github.com/tanyinqing/Bootstrap_20170902)|
-|CSS_20170902|CSS的学习笔记|[地址](https://github.com/tanyinqing/CSS_20170902)|
 |HTML_20170902|HTML的学习笔记|[地址](https://github.com/tanyinqing/HTML_20170902)|
+|CSS_20170902|CSS的学习笔记|[地址](https://github.com/tanyinqing/CSS_20170902)|
+|Bootstrap_20170902|前端框架Bootstrap的学习笔记|[地址](https://github.com/tanyinqing/Bootstrap_20170902)|
+|JavaSE_20170902|JavaSE的学习笔记|[地址](https://github.com/tanyinqing/JavaSE_20170902)|
+|JavaScript_20170902|JavaScript的学习笔记|[地址](https://github.com/tanyinqing/JavaScript_20170902)|
 |jQuery_20170902|jquery库的使用|[地址](https://github.com/tanyinqing/jQuery_20170902)|
+|MySQL_20170902|MySQL数据库的实例项目|[地址](https://github.com/tanyinqing/MySQL_20170902)|
 
 
 - 学习方法总结
