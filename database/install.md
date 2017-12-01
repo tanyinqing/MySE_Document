@@ -71,8 +71,8 @@ D:\mysql\bin> mysql -u root -p
   ```sql
   mysql -u root -p  开启数据库  密码没有就点回车  此命令在数据库的跟目录下进行。
 
-  update mysql.user set password = PASSWORD('your_new_password') where user='root';
-  flush privileges;
+  update mysql.user set password = PASSWORD('system') where user='root';//修改数据库密码
+  flush privileges;   刷新权限
   
   -- forgot root password
   # cmd1

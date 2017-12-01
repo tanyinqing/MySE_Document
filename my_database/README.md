@@ -16,6 +16,6 @@
 
 1. [引言](intro.md)
 2. [环境配置](install.md)
-3. [SQL](sql.md)
+3. [SQL](../database/sql.md)
 4. [设计](design.md)
 4. [练习题](exercise.md)

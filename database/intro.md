@@ -46,19 +46,19 @@
     - Redis
 
 ## 基本概念
-1. Database
+1. Database  数据库 容器 保存有组织的数据 通常还是一个文件
 
   > Database - A container (usually a file or set of files) to store organized data.
 
-2. Table
+2. Table  表格 某一种类型的数据的结构化存储
 
   > A structured list of data of a specific type.
  
-3. Schema
+3. Schema 模式
 
   > Information about database and table layout and properties.
 
-4. Column
+4. Column 列
 
   > A single field in a table. All tables are made up of one or more columns.
 
@@ -66,7 +66,7 @@
 
   >  A type of allowed data. Every table column has an associated datatype that restricts (or allows) specific data in that column.
 
-6. Row行
+6. Row 行
 
   > A record in a table.
 
@@ -74,7 +74,7 @@
 
   >  A column (or set of columns) whose values uniquely identify every row in a table.
 
-8. SQL ` ['siːkwəl]`
+8. SQL ` ['siːkwəl]`  结构化查询语言
 
   - SQL is not a proprietary language used by specific database vendors. Almost every major RDBMS supports SQL, so learning this one language enables you
 to interact with just about every database you'll run into.

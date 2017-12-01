@@ -7,9 +7,9 @@
 SELECT * FROM table_name;
 ```
 
-1. SQL 关键字不区分大小写
-2. 分号 `;` 是区分语句的标志
-3. MySQL 注释
+1. SQL 关键字不区分大小写  结构化查询语言 第四代语言
+2. 分号 `;` 是区分语句的标志 命令式语言
+3. MySQL 注释 单行注释和多行注释
 
   ```sql
   SELECT 1+1;     # This comment continues to the end of line
@@ -27,7 +27,7 @@ SELECT * FROM table_name;
 5. 常用的 SQL 语句
   
   ```sql
-  SELECT - extracts data from a database
+  SELECT - extracts data from a database  
   UPDATE - updates data in a database
   DELETE - deletes data from a database
   INSERT INTO - inserts new data into a database
@@ -37,14 +37,14 @@ SELECT * FROM table_name;
   CREATE TABLE - creates a new table
   ALTER TABLE - modifies a table
   DROP TABLE - deletes a table
-  CREATE INDEX - creates an index (search key)
+  CREATE INDEX - creates an index (search key) 创建索引
   DROP INDEX - deletes an index
   ```
 
 ## SQL 语句
 ### 1. DDL
 
-> Data Definition Language
+> Data Definition Language 数据定义语言
 
 - SQL Create DB
 
@@ -52,9 +52,9 @@ SELECT * FROM table_name;
   CREATE DATABASE database_name;
   ```
 
-- SQL 数据类型
+- SQL 数据类型  不同数据库数据类型不同
  
-  > text, number, and Date/Time
+  > text, number, and Date/Time  字符和数字和日期
 
   1. Text types
 <table>
@@ -63,13 +63,13 @@ SELECT * FROM table_name;
       <th>Description</th>
     </tr>
     <tr>
-      <td>CHAR(size)</td>
+      <td>CHAR(size)长度固定的，最大255</td>
       <td>Holds a fixed length string (can contain letters, numbers, and special 
 	  characters). The fixed size is specified in parenthesis. Can store up to 
 	  255 characters</td>
     </tr>
     <tr>
-      <td><b>VARCHAR(size)</b></td>
+      <td><b>VARCHAR(size) 可变长度字符类型</b></td>
       <td>Holds a variable length string (can contain letters, numbers, and 
 	  special characters). The maximum size is specified in parenthesis. Can 
 	  store up to 255 characters. <b>Note:</b> If you put a greater value than 
@@ -80,27 +80,27 @@ SELECT * FROM table_name;
       <td>Holds a string with a maximum length of 255 characters</td>
     </tr>
     <tr>
-      <td>TEXT</td>
+      <td>TEXT 文本</td>
       <td>Holds a string with a maximum length of 65,535 characters</td>
     </tr>
     <tr>
-      <td>BLOB</td>
+      <td>BLOB 大的2进制数据</td>
       <td>For BLOBs (Binary Large OBjects). Holds up to 65,535 bytes of data</td>
     </tr>
     <tr>
-      <td>MEDIUMTEXT</td>
+      <td>MEDIUMTEXT 中文本</td>
       <td>Holds a string with a maximum length of 16,777,215 characters</td>
     </tr>
     <tr>
-      <td>MEDIUMBLOB</td>
+      <td>MEDIUMBLOB 音频</td>
       <td>For BLOBs (Binary Large OBjects). Holds up to 16,777,215 bytes of data</td>
     </tr>
     <tr>
-      <td>LONGTEXT</td>
+      <td>LONGTEXT 特别长的文本</td>
       <td>Holds a string with a maximum length of 4,294,967,295 characters</td>
     </tr>
     <tr>
-      <td>LONGBLOB</td>
+      <td>LONGBLOB 4个G</td>
       <td>For BLOBs (Binary Large OBjects). Holds up to 4,294,967,295 bytes of 
 	  data</td>
     </tr>
@@ -119,10 +119,10 @@ SELECT * FROM table_name;
     </tr>
 </table>
 
-  2. Number types
+  2. Number types 数值类型
 <table>
     <tr>
-      <th style="width:20%">Data type</th>
+      <th style="width:20%">Data type 宽度安照比例</th>
       <th>Description</th>
     </tr>
     <tr>
@@ -141,30 +141,30 @@ SELECT * FROM table_name;
 	  number of digits may be specified in parenthesis</td>
     </tr>
     <tr>
-      <td><b>INT(size)</b></td>
+      <td><b>INT(size) 最常用</b></td>
       <td>-2147483648 to 2147483647 normal. 0 to 4294967295 UNSIGNED*. The 
 	  maximum number of digits may be specified in parenthesis</td>
     </tr>
     <tr>
-      <td>BIGINT(size)</td>
+      <td>BIGINT(size) 长整形</td>
       <td>-9223372036854775808 to 9223372036854775807 normal. 0 to 
 	  18446744073709551615 UNSIGNED*. The maximum number of digits may be 
 	  specified in parenthesis</td>
     </tr>
     <tr>
-      <td>FLOAT(size,d)</td>
+      <td>FLOAT(size,d) 单精度</td>
       <td>A small number with a floating decimal point. The maximum number of 
 	  digits may be specified in the size parameter. The maximum number of 
 	  digits to the right of the decimal point is specified in the d parameter</td>
     </tr>
     <tr>
-      <td><b>DOUBLE(size,d)</b></td>
+      <td><b>DOUBLE(size,d) 双精度</b></td>
       <td>A large number with a floating decimal point. The maximum number of 
 	  digits may be specified in the size parameter. The maximum number of 
 	  digits to the right of the decimal point is specified in the d parameter</td>
     </tr>
     <tr>
-      <td><b>DECIMAL(size,d)</b></td>
+      <td><b>DECIMAL(size,d) 跟钱有关的用</b></td>
       <td>A DOUBLE stored as a string , allowing for a fixed decimal point. The 
 	  maximum number of digits may be specified in the size parameter. The 
 	  maximum number of digits to the right of the decimal point is specified in 
@@ -176,7 +176,7 @@ SELECT * FROM table_name;
     
     > The size is just the display width, that is used when the field has ZEROFILL specified. 
  
-  3. Date types
+  3. Date types 日期有关的
 <table>
     <tr>
       <th>Data type</th>
@@ -188,7 +188,7 @@ SELECT * FROM table_name;
 	  '1000-01-01' to '9999-12-31'</p></td>
     </tr>
     <tr>
-      <td><b>DATETIME</b></td>
+      <td><b>DATETIME 年月日</b></td>
       <td>*A date and time combination. Format: YYYY-MM-DD HH:MI:SS<p><b>Note:</b> 
 	  The supported range is from '1000-01-01 00:00:00' to '9999-12-31 23:59:59'</p></td>
     </tr>
@@ -200,7 +200,7 @@ SELECT * FROM table_name;
 	  UTC to '2038-01-09 03:14:07' UTC</p></td>
     </tr>
     <tr>
-      <td>TIME</td>
+      <td>TIME 时分秒</td>
       <td>A time. Format: HH:MI:SS<p><b>Note:</b> The supported range is from 
 	  '-838:59:59' to '838:59:59'</p></td>
     </tr>
@@ -225,7 +225,7 @@ SELECT * FROM table_name;
   );
 ```
 
-- SQL Drop
+- SQL Drop 删除
 
   ```sql
   -- Drop database
@@ -504,7 +504,7 @@ SELECT * FROM table_name;
 
 ### 3. DQL
 
-> Data Query Language
+> Data Query Language 数据查询语言
 
 - MySQL Show
   - SHOW DATABASES; `显示服务器中所有的库`
