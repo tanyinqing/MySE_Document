@@ -234,7 +234,7 @@ SELECT * FROM table_name;
   DROP TABLE table_name;
   -- Drop index in MySQL
   ALTER TABLE table_name DROP INDEX index_name;
-  -- Truncate table
+  -- Truncate table  
   TRUNCATE TABLE table_name;
   ```
 
@@ -264,7 +264,7 @@ SELECT * FROM table_name;
     );
     ```
   
-  - 唯一约束 `Unique`
+  - 唯一约束 `Unique`  可以为空 不能重复
   
     ```sql
     CREATE TABLE Persons (
@@ -277,7 +277,7 @@ SELECT * FROM table_name;
     );
     ```
   
-  - 主键约束 `Primary Key`
+  - 主键约束 `Primary Key`  可以为空 自增长
 
     ```sql
     -- 一般情况下的主键定义方式
@@ -317,7 +317,7 @@ SELECT * FROM table_name;
         RESTRICT | CASCADE | SET NULL | NO ACTION
     ```
     
-    > temporarily disable a foreign key constraint in MySQL
+    > temporarily disable a foreign key constraint in MySQL   在MySQL中暂时禁用外键约束
 
     ```sql
     -- Try DISABLE KEYS:
@@ -345,9 +345,9 @@ SELECT * FROM table_name;
 
   - ~~SQL Check~~ `MySQL`
   
-    >  The CHECK clause is parsed but ignored by all storage engines.
+    >  The CHECK clause is parsed but ignored by all storage engines. 检查子句被解析，但被所有存储引擎忽略
 
-    > [CHECK constraint in MySQL is not working](http://stackoverflow.com/questions/2115497/check-constraint-in-mysql-is-not-working)
+    > [CHECK constraint in MySQL is not working MySQL中的检查约束不起作用](http://stackoverflow.com/questions/2115497/check-constraint-in-mysql-is-not-working)
   
 - Auto Increment
 
