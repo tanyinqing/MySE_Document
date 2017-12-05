@@ -238,7 +238,7 @@ SELECT * FROM table_name;
   TRUNCATE TABLE table_name;
   ```
 
-- SQL Constraints
+- SQL Constraints  字段进行限制
   1. 约束创建时间
     - 建表时创建
     
@@ -252,7 +252,7 @@ SELECT * FROM table_name;
       ```
       
     - 建表后追加 `todo`
-  - 非空约束 `Not Null`
+  - 非空约束 `Not Null`   不可以为空值
   
     ```sql
     CREATE TABLE PersonsNotNull (
@@ -264,7 +264,7 @@ SELECT * FROM table_name;
     );
     ```
   
-  - 唯一约束 `Unique`  可以为空 不能重复
+  - 唯一约束 `Unique`  可以为空 不能重复 值唯一
   
     ```sql
     CREATE TABLE Persons (
@@ -273,11 +273,11 @@ SELECT * FROM table_name;
       FirstName varchar(255),
       Address varchar(255),
       City varchar(255),
-      CONSTRAINT uc_PersonID UNIQUE (P_Id,LastName)
+      CONSTRAINT uc_PersonID UNIQUE (P_Id,LastName) -- 另一种声明值唯一的方式
     );
     ```
   
-  - 主键约束 `Primary Key`  可以为空 自增长
+  - 主键约束 `Primary Key`  不可以为空 值唯一 自增长
 
     ```sql
     -- 一般情况下的主键定义方式
@@ -286,7 +286,7 @@ SELECT * FROM table_name;
       ...
     );
     ```
-
+另一种声明方式
     ```sql
     CREATE TABLE Persons (
       P_Id int NOT NULL,
@@ -298,19 +298,20 @@ SELECT * FROM table_name;
     );
     ```
 
-  - SQL Foreign Key
+  - SQL Foreign Key 建立表关联
     - 主表 父表（主键所在的表）
     - 从表 子表（外键所在的表）
     - 必须引用主表主键
     - 外键和主键数据类型一致
     
-    > [mySQL RESTRICT and NO ACTION](http://stackoverflow.com/a/5810024/3414180)
+    > [mySQL RESTRICT and NO ACTION MySQL限制和不动作](http://stackoverflow.com/a/5810024/3414180)
       
     ```
+    -- 建立外键约束 和 4个引用的选项  即外键在删除和修改时执行的操作 这里写的比较麻烦，可以看例子
     [CONSTRAINT [symbol]] FOREIGN KEY
         [index_name] (index_col_name, ...)
         REFERENCES tbl_name (index_col_name,...)
-        [ON DELETE reference_option]
+        [ON DELETE reference_option] 引用选项
         [ON UPDATE reference_option]
 
     reference_option:
@@ -320,11 +321,11 @@ SELECT * FROM table_name;
     > temporarily disable a foreign key constraint in MySQL   在MySQL中暂时禁用外键约束
 
     ```sql
-    -- Try DISABLE KEYS:
+    -- Try DISABLE KEYS: 原来的外键都暂时失效了
 
     SET FOREIGN_KEY_CHECKS=0;
 
-    -- make sure to
+    -- make sure to 使外键重新生效
 
     SET FOREIGN_KEY_CHECKS=1;
 
@@ -339,17 +340,17 @@ SELECT * FROM table_name;
       LastName varchar(255) NOT NULL,
       FirstName varchar(255),
       Address varchar(255),
-      City varchar(255) DEFAULT 'Sandnes'
+      City varchar(255) DEFAULT 'Sandnes' -- 使列在未定义的情况下生成默认值
     )
     ```
 
-  - ~~SQL Check~~ `MySQL`
+  - ~~SQL Check~~ `MySQL` 检查也就是在值插入时对值进行检查  mysql中不起作用
   
     >  The CHECK clause is parsed but ignored by all storage engines. 检查子句被解析，但被所有存储引擎忽略
 
     > [CHECK constraint in MySQL is not working MySQL中的检查约束不起作用](http://stackoverflow.com/questions/2115497/check-constraint-in-mysql-is-not-working)
   
-- Auto Increment
+- Auto Increment  自定增长
 
   ```sql
   CREATE TABLE Persons (
@@ -360,40 +361,43 @@ SELECT * FROM table_name;
   ```
 
   ```sql
-  ALTER TABLE Persons AUTO_INCREMENT = 100;
+  ALTER TABLE Persons AUTO_INCREMENT = 100; -- 让主键的值从指定的值开始
   ```
 
 - Alter  
 
   ```sql
-  ALTER TABLE old_table_name RENAME new_table_name;
+  ALTER TABLE old_table_name RENAME new_table_name;-- 修改表的名字
   ```
 
   ```sql
   ALTER TABLE table_name
   ADD COLUMN column_name datatype [AFTER column_name | FIRST];
+
+    -- 为表添加一列  指定列的位置
+    ALTER TABLE db_day03.student ADD COLUMN marride INT(1) NOT NULL AFTER gender;
   ```
 
   ```sql
   ALTER TABLE table_name
-  DROP COLUMN column_name;
+  DROP COLUMN column_name;  -- 删除一列
   ```
 
   ```sql
   ALTER TABLE table_name
-  MODIFY COLUMN column_name datatype [AFTER column_name | FIRST];
+  MODIFY COLUMN column_name datatype [AFTER column_name | FIRST]; -- 修改列名
   ```
   
   ```sql
   ALTER TABLE table_name 
-  ADD CONSTRAINT primary_key_name PRIMARY KEY(columns);
+  ADD CONSTRAINT primary_key_name PRIMARY KEY(columns);-- 添加主键
   ```
   
   ```sql
   ALTER TABLE table_name
-  CHANGE old_column_name new_column_name datatype [AFTER column_name | FIRST];
+  CHANGE old_column_name new_column_name datatype [AFTER column_name | FIRST];  -- 修改列的名字
   ```
-  
+  - 为表追加外键 不推荐
   ```sql
   ALTER TABLE table_name
   ADD CONSTRAINT
@@ -403,7 +407,7 @@ SELECT * FROM table_name;
   ON DELETE action
   ON UPDATE action;
   ```
-  
+  - 为表删除外键约束
   ```sql
   ALTER TABLE table_name 
   DROP FOREIGN KEY constraint_name;
@@ -424,7 +428,7 @@ SELECT * FROM table_name;
   DELETE n1 FROM names n1, names n2 WHERE n1.id < n2.id AND n1.name = n2.name;
   ```
 
-- Index
+- Index 索引
 
   ```sql
   CREATE INDEX idx_name ON table_name(column);
@@ -446,9 +450,9 @@ SELECT * FROM table_name;
   - 单列索引 `todo`
   - 组合索引 `todo`
 
-### 2. DML
+### 2. DML 
 
-> Data Manipulate Language
+> Data Manipulate Language 数据操作语言
 
 - Insert
 
@@ -502,7 +506,7 @@ SELECT * FROM table_name;
     mysqldump -B -u your_mysql_username -p database_name > file_name.sql
     ```
 
-### 3. DQL
+### 3. DQL 比较重要 比较多
 
 > Data Query Language 数据查询语言
 
@@ -792,7 +796,7 @@ SELECT * FROM table_name;
 
 ### 4. DTL
 
-  > Data Transaction Language
+  > Data Transaction Language 数据交易语言
 
   > 在数据库系统中，一个事务是指：由一系列数据库操作组成的一个完整的逻辑过程
   
@@ -828,7 +832,7 @@ SELECT * FROM table_name;
 
 ### 5. DCL
 
-> Data Control Language
+> Data Control Language 数据控制语言
 
 1. 创建用户
 
