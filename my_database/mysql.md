@@ -1,4 +1,22 @@
 
+# 查询数据库的详情
+- SHOW DATABASES ;
+- SHOW TABLE STATUS FROM scott;   显示表的信息
+- SHOW FULL COLUMNS FROM scott.emp;    显示字段的详细信息
+
+# 数据库备份和还原
+拷贝数据库 到目录 D:\mysql\bin  导出的操作
+- D:
+- cd mysql/bin
+- mysqldump -B -u root -p db_day03 > file_name.sql
+
+- mysql -u root -p  开启数据库
+- source d:\mysql\bin\tan.sql  反向操作把数据库导入服务器
+# 主表和从表的关系
+- 1_foreign-key 这个练习题
+- 主表是主键所在的表  例如 部门表
+- 从表是外键所在的表  例如 员工表
+- 从表必须包括主表的主键
 
 # ddl 数据库定义语言
 - 建立联合查询

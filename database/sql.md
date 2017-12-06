@@ -299,8 +299,8 @@ SELECT * FROM table_name;
     ```
 
   - SQL Foreign Key 建立表关联
-    - 主表 父表（主键所在的表）
-    - 从表 子表（外键所在的表）
+    - 主表 父表（主键所在的表）部门表
+    - 从表 子表（外键所在的表） 员工表
     - 必须引用主表主键
     - 外键和主键数据类型一致
     
@@ -428,10 +428,11 @@ SELECT * FROM table_name;
   DELETE n1 FROM names n1, names n2 WHERE n1.id < n2.id AND n1.name = n2.name;
   ```
 
-- Index 索引
+- Index 索引 和表平级 提高检索的速度但修改和删除的速度会变慢
 
   ```sql
   CREATE INDEX idx_name ON table_name(column);
+  -- CREATE INDEX idx_name ON db_day04.employee(name);
   ```
   
   ```sql
@@ -442,21 +443,21 @@ SELECT * FROM table_name;
   SHOW INDEX FROM table_name;
   ```
   
-  - primary key > index
-  - unique > index
-  - foreign key > index (only for InnoDB)
+  - primary key > index 主键自动变成索引
+  - unique > index  唯一约束自动变成索引
+  - foreign key > index (only for InnoDB 仅仅mysql的这个引擎外键变成索引)
       > [Does MySQL index foreign key columns automatically?](http://stackoverflow.com/questions/304317/does-mysql-index-foreign-key-columns-automatically)
 
   - 单列索引 `todo`
   - 组合索引 `todo`
 
-### 2. DML 
+### 2. DML 插入 删除 修改对应的语句
 
 > Data Manipulate Language 数据操作语言
 
-- Insert
+- Insert 
 
-  > [what is difference between insert `VALUE` and insert `VALUES` in mysql statement?](http://stackoverflow.com/a/17445644)
+  > [没有什么区别 what is difference between insert `VALUE` and insert `VALUES` in mysql statement?](http://stackoverflow.com/a/17445644)
   
   ```sql
   INSERT INTO table_name
@@ -468,7 +469,7 @@ SELECT * FROM table_name;
   VALUES (value1,value2,value3,...);
   ```
 
-- Update
+- Update 更新
 
   ```sql
   UPDATE table_name
@@ -476,7 +477,7 @@ SELECT * FROM table_name;
   WHERE some_column=some_value;
   ```
 
-- Delete
+- Delete 删除
 
   ```sql
   DELETE FROM table_name
@@ -485,13 +486,13 @@ SELECT * FROM table_name;
 
   > MySQL dump and import
 
-  - import
+  - import 导入一个数据库
   
     ```sql
     mysql> source file_name.sql
     ```
     
-  - load
+  - load 
   
     ```sql
     LOAD DATA LOCAL INFILE 'path_to_your_csv_file'
@@ -499,7 +500,7 @@ SELECT * FROM table_name;
     FIELDS TERMINATED BY ',' (column_name1, column_name2, ...)
     SET id = NULL;
     ```
-  - dump
+  - dump 导出数据库
   
     ```sql
     -- your_mysql_directory/bin

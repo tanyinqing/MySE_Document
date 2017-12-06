@@ -1,6 +1,6 @@
 # Summary
 
-* [Java - Big Data Engineer Training](README.md)
+* [导读](README.md)
 * [精简Database](my_database/README.md)
    * [实践sql语句](my_database/mysql.md)   
    * [实践的环境配置](my_database/实践的环境配置.md)   
