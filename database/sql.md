@@ -531,7 +531,7 @@ SELECT * FROM table_name;
   FROM table_name;
   ```
 
-- SQL distinct
+- SQL distinct 唯一的 去除重复的值
 
   ```sql
   SELECT DISTINCT column_name,column_name
@@ -548,8 +548,8 @@ SELECT * FROM table_name;
   WHERE column_name operator value;
   ```
 
-  - <>
-  - `BINARY`
+  - <>  表示不等于
+  - `BINARY`  区分大小写查询
   
 - SQL AND & OR
 
@@ -571,29 +571,29 @@ SELECT * FROM table_name;
   AND (City='Berlin' OR City='München');
   ```
   
-- SQL Order By
+- SQL Order By 排序 默认是升序排列
 
   ```sql
   SELECT column_name1, column_name2
   FROM table_name
   ORDER BY column_name1 ASC|DESC, column_name2 ASC|DESC;
-  -- ORDER BY 1, 2
+  -- ORDER BY 1, 2  按第几列的升序排列
   ```
   
-  > `NUll` min
+  > `NUll` min  默认值最小
   
-- SQL Top `limit`
+- SQL Top `limit`  分页查询
 
   ```sql
   SELECT column_name(s)
   FROM table_name
   LIMIT number1 OFFSET number2;
-  -- LIMIT number2, number1
+  -- LIMIT number2, number1  其他写的方法
   ```
   
   `LIMIT` 位于 `ORDER BY` 之后
   
-- SQL Like  
+- SQL Like  模糊匹配
 
   ```sql
   SELECT column_name(s)
@@ -608,24 +608,25 @@ SELECT * FROM table_name;
   ```
   
 - SQL 通配符 
-  - `%`
-  - `_`
-  - `ESCAPE`
+  - `%`  代表字符串
+  - `_`  代表一个字符
+  - `ESCAPE`   这个没有用
     
     ```sql
+    
     SELECT *
     FROM table_name
-    WHERE column_name LIKE '%\_%' ESCAPE '\\';
+    WHERE column_name LIKE '%\_%' ESCAPE '\\';-- 正则表达式
     ```
  
-- MySQL RLIKE REGEXP
+- MySQL RLIKE REGEXP 关键字两个意思一样 正则表达式 
 
 - SQL In
 
   ```sql
   SELECT column_name(s)
   FROM table_name
-  WHERE column_name [NOT] IN (value1,value2,...);
+  WHERE column_name [NOT] IN (value1,value2,...);-- 确定取值的范围
   ```
   
 - SQL Between And
@@ -633,25 +634,25 @@ SELECT * FROM table_name;
   ```sql
   SELECT column_name(s)
   FROM table_name
-  WHERE column_name [NOT] BETWEEN value1 AND value2;
+  WHERE column_name [NOT] BETWEEN value1 AND value2;-- 确定取值的范围
   ```
   
-- SQL Aliases
+- SQL Aliases 别名
 
   ```sql
   SELECT column_name [AS] alias_name
-  FROM table_name;
+  FROM table_name;  -- 列名用别名
   ```
   
   ```sql
   SELECT alias_name.column_name(s)
-  FROM table_name [AS] alias_name
+  FROM table_name [AS] alias_name  -- 表名用别名
   ```
 - SQL Nulls 判断
 
-    > `IS [NOT] NULL`
+    > `IS [NOT] NULL`   判断是否是空值
     
-- SQL ifnull(,)    
+- SQL ifnull(,)    函数判断运算时是否是空值
 - SQL Join
 
   > SQL joins are used to combine rows from two or more tables.

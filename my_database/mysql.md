@@ -5,12 +5,13 @@
 - SHOW FULL COLUMNS FROM scott.emp;    显示字段的详细信息
 
 # 数据库备份和还原
-拷贝数据库 到目录 D:\mysql\bin  导出的操作
+拷贝数据库 到目录 D:\mysql\bin  
 - D:
 - cd mysql/bin
 - mysqldump -B -u root -p db_day03 > file_name.sql
 
-- mysql -u root -p  开启数据库
+把数据库导入服务器的操作 先把数据库拷贝到 D:\mysql\bin 目录下
+- mysql -u root -p  进入数据库
 - source d:\mysql\bin\tan.sql  反向操作把数据库导入服务器
 # 主表和从表的关系
 - 1_foreign-key 这个练习题
