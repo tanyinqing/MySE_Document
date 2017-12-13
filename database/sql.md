@@ -653,18 +653,18 @@ SELECT * FROM table_name;
     > `IS [NOT] NULL`   判断是否是空值
     
 - SQL ifnull(,)    函数判断运算时是否是空值
-- SQL Join
+- SQL Join 多表查询
 
   > SQL joins are used to combine rows from two or more tables.
  
   > 连接条件 = N - 1
 
-  1. `CROSS JOIN` 
-  2. `INNER JOIN`
-  3. `OUTER JOIN`
-    - `LEFT OUTER JOIN`
-    - `RIGHT OUTER JOIN`
-    - `FULL OUTER JOIN`
+  1. `CROSS JOIN 笛卡儿积` 
+  2. `INNER JOIN 内连接`
+  3. `OUTER JOIN 外连接`
+    - `LEFT OUTER JOIN 左外连接`
+    - `RIGHT OUTER JOIN 右外连接`
+    - `FULL OUTER JOIN 显示左表T1、右表T2两边中的所有行，即把左联结果表 + 右联结果表组合在一起，然后过滤掉重复的。`
 
 - SQL Cross Join
 
@@ -676,7 +676,7 @@ SELECT * FROM table_name;
   [INNER | CROSS] JOIN table2;
   ```
 
-- SQL Inner Join
+- SQL Inner Join 内连接  返回两个表中具有匹配值的记录 不匹配的就不返回了
 
   ```sql
   SELECT column_name(s)
@@ -692,7 +692,7 @@ SELECT * FROM table_name;
   USING (column_name); -- For same column_name 
   ```
   
-- SQL Left Join
+- SQL Left Join  返回左表中的所有记录，以及右表中匹配的记录 左表中不匹配的用空值替代
 
   ```sql
   SELECT column_name(s)
@@ -707,7 +707,7 @@ SELECT * FROM table_name;
     - 在匹配阶段 `WHERE` 子句的条件都不会被使用
     - 在匹配阶段完成以后 `WHERE` 子句条件才会被使用，它将从匹配阶段产生的结果集进行行检索
 
-- SQL Right Join
+- SQL Right Join  右联合查询  从右表中返回所有记录，并从左表中返回匹配的记录 右表中不匹配的用空值替代
 
   ```sql
   SELECT column_name(s)
@@ -716,28 +716,30 @@ SELECT * FROM table_name;
   ON table1.column_name=table2.column_name;
   ```
   
-- ~~SQL Full Join~~   `UNION` 
+- ~~SQL Full Join~~   `UNION`  两个查询语句查询结果的并集 去掉重复的
 - SQL Union
 
   ```sql
   SELECT column_name(s) FROM table1
   UNION
   SELECT column_name(s) FROM table2;
+  -- 会自动去除重复的列  两个查询语句查询结果的并集  不去掉重复的
   ```
   
   ```sql
   SELECT column_name(s) FROM table1
   UNION ALL
   SELECT column_name(s) FROM table2;
+  -- 不去除重复的列
   ```
   
-- SQL Create Table Select  
+- SQL Create Table Select  用选中的列建表
 
   ```sql
   CREATE TABLE new_table_name
   SELECT * FROM original_table_name;
   ```
-- SQL Insert Into Select
+- SQL Insert Into Select 插入选中的语句
 
   ```sql
   INSERT INTO table2
