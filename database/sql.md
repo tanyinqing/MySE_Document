@@ -653,13 +653,13 @@ SELECT * FROM table_name;
     > `IS [NOT] NULL`   判断是否是空值
     
 - SQL ifnull(,)    函数判断运算时是否是空值
-- SQL Join 多表查询
+- SQL Join 多表查询 联合查询
 
   > SQL joins are used to combine rows from two or more tables.
  
   > 连接条件 = N - 1
 
-  1. `CROSS JOIN 笛卡儿积` 
+  1. `CROSS JOIN 笛卡儿积 交叉连接` 
   2. `INNER JOIN 内连接`
   3. `OUTER JOIN 外连接`
     - `LEFT OUTER JOIN 左外连接`
@@ -685,11 +685,12 @@ SELECT * FROM table_name;
   ON table1.column_name=table2.column_name;
   ```
   
+  - 
   ```sql
   SELECT column_name(s)
   FROM table1
   [INNER] JOIN table2
-  USING (column_name); -- For same column_name 
+  USING (column_name); -- For same column_name  主键和外键的名字一样的情况下使用
   ```
   
 - SQL Left Join  返回左表中的所有记录，以及右表中匹配的记录 左表中不匹配的用空值替代
@@ -748,12 +749,12 @@ SELECT * FROM table_name;
   FROM table1;
   ```
   
-- SQL View
+- SQL View  就是一个虚表
 
   > 被存储的查询
 
   ```sql
-  -- 创建视图 
+  -- 创建视图 或更新视图
   CREATE [OR REPLACE] VIEW view_name AS
   SELECT column_name(s)
   FROM table_name
@@ -761,7 +762,7 @@ SELECT * FROM table_name;
   ``` 
   
   ```sql
-  -- 查询视图 
+  -- 查询视图 的数量
   SHOW FULL TABLES IN database_name WHERE TABLE_TYPE LIKE 'VIEW';
   ```
   
@@ -771,14 +772,14 @@ SELECT * FROM table_name;
   ```
   1. 简单视图 `updatable view`
       - `简单查询` 生成的，可以修改基表的数据
-  2. 复杂视图 `read-only view`
+  2. 复杂视图 `read-only view` 只读视图
       - `复杂查询` 生成的，不可以修改基表的数据    
         - 聚合函数
         - `DISTINCT`
         - `GROUP BY`
         - `HAVING`
         - `UNION` 或 `UNION ALL`
-        - `Subquery`
+        - `Subquery 子查询`
         - 某些联合查询 (see additional join discussion later in this section)
         - 在 `FROM` 子句中引用不可更新视图
         - Subquery in the WHERE clause that refers to a table in the FROM clause
@@ -787,16 +788,16 @@ SELECT * FROM table_name;
         - 对基表的任何列有多个引用
         
   3. 视图的作用
-      - 数据安全性
-      - 简化查询
-      - 逻辑独立性
+      - 数据安全性  只显示安全数据
+      - 简化查询 变联合查询为简单查询
+      - 逻辑独立性 视图对应业务逻辑
 
 - 子查询 `Sub Queries`
 
   > 查询的嵌套
 
-  - 相关子查询 `correlated sub query`
-  - 非相关子查询 `uncorrelated sub query`
+  - 相关子查询 `correlated sub query`  子查询不可以独立存在
+  - 非相关子查询 `uncorrelated sub query`   子查询可以独立存在
 
 ### 4. DTL
 
@@ -918,7 +919,7 @@ SELECT * FROM table_name;
       - ~~FIRST()~~
       - ~~LAST()~~
       
-   - **SQL Group By** `组查询`
+   - **SQL Group By** `分组查询`
 
         ```sql
         SELECT aggregate_function(column_name)
