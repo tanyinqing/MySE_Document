@@ -801,7 +801,7 @@ SELECT * FROM table_name;
 
 ### 4. DTL
 
-  > Data Transaction Language 数据交易语言
+  > Data Transaction Language 数据事务语言
 
   > 在数据库系统中，一个事务是指：由一系列数据库操作组成的一个完整的逻辑过程
   
@@ -818,7 +818,7 @@ SELECT * FROM table_name;
     - `START TRANSACTION;`
   - 事务处理语句
     - `DML` 语句 `insert` `update` `delete`
-    - `DQL` 语句与事务无关
+    - `DQL` 语句与事务无关 查询语句
   - 显式结束事务
     - `COMMIT;` `提交` 
     - `ROLLBACK;` `回滚`
