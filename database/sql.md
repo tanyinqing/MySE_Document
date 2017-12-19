@@ -1,3 +1,8 @@
+
+- 一共有5中sql语言
+- [卫士](#1)
+<h1 id="1">卫士</h1>
+
 # Chapter 3 SQL 语言
 
 ## 基础语法
@@ -818,12 +823,12 @@ SELECT * FROM table_name;
     - `START TRANSACTION;`
   - 事务处理语句
     - `DML` 语句 `insert` `update` `delete`
-    - `DQL` 语句与事务无关 查询语句
+    - `DQL` 语句与事务无关 查询语句  不修改数据
   - 显式结束事务
     - `COMMIT;` `提交` 
     - `ROLLBACK;` `回滚`
   - 隐式结束事务
-    - `DDL` 语句
+    - `DDL` 语句 以提交方式结束语句
   - 事务保留点
   ```sql
   SAVEPOINT save_point_name; -- 设置保留点
