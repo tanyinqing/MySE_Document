@@ -1,7 +1,6 @@
 
 - 一共有5中sql语言
-- [卫士](#1)
-<h1 id="1">卫士</h1>
+- [数据控制语言](#20171219_1)
 
 # Chapter 3 SQL 语言
 
@@ -839,8 +838,9 @@ SELECT * FROM table_name;
   SET AUTOCOMMIT = 0;
   SET AUTOCOMMIT = 1;
   ```
+<h1 id="20171219_1">数据控制语言</h1>
 
-### 5. DCL
+### 5. DCL  dba 数据库管理员
 
 > Data Control Language 数据控制语言
 

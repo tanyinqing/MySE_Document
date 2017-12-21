@@ -1,14 +1,14 @@
 # Chapter 4 数据库设计
 
 1. NF
-    - Normal Forms 范式
+    - Normal Forms 范式 规范的形式
     - 1NF
         
         > 没有复义的列，列值唯一
 
     - 2NF
     
-        > 行可以被唯一区分
+        > 行可以被唯一区分 靠主键来区分
     
     - 3NF
         
