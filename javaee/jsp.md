@@ -68,20 +68,20 @@
 2. `JSP` 页面元素
     1. 注释
         - `HTML` 注释 `<!-- comment... -->`
-        - `JSP` 隐藏注释 `<%-- comment... --%>`
+        - `JSP` 隐藏注释 页面的源代码中看不到`<%-- comment... --%>`
         - `Java` 注释 
           - `// comment`
           - `/* comment */`
     2. 模板元素
         - 静态 `HTML` 元素
     3. 脚本元素
-        - 声明 `declaration` `<%! %>` class 类体内
-        - 小脚本 `scriptlet` `<% %>` _jspService() 方法体内
+        - 声明 `declaration` `<%! %>` class 类体内的成员方法
+        - 小脚本 `scriptlet` `<% %>` _jspService() 内置在特定方法体内部
         - 表达式 `expression` `<%= %>` out.print() 方法的参数
     4. 指令元素
-        - page 指令 `<%@ page %>`
+        - page 指令 `<%@ page %>`任何页面都有
         - include 指令 `<%@ include %>`
-        - taglib 指令 `<%@ taglib %>`
+        - taglib 指令 `<%@ taglib %>`标签库
     5. 动作元素
         - include 动作` <jsp:include page=""/>`
     
