@@ -1,11 +1,12 @@
 # Chapter 5 EL & JSTL
 
-> Expression Language
+> Expression Language 表达式语言 不用引入库
 
-> JSP Standard Tag Library
+> JSP Standard Tag Library jsp标准标记库 需要引入第三方库
+
 
 - EL 表达式语言
-  1. `${expression}`
+  1. `${expression}`  expression表达式
   2. get attribute
 
       ```
@@ -16,7 +17,7 @@
       ```
   3. `param.request_key`
   4. EL 运算
-    - `eq`
+    - `eq`  比较是否是一个对象
     - `ne`
     - `lt`
     - `gt`
@@ -32,7 +33,10 @@
   > *.jsp
 
   ```
+  核心标记库
   <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+   函数库 页面要引入才可以使用
+  <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
   ```
 
   1. core 核心标签
@@ -40,12 +44,12 @@
       - `c:set`
       - `c:remove`
       - `c:catch`
-      - **`c:if`**
-      - **`c:choose`** 用来包含 `c:when` 或 `c:otherwise`
+      - **`c:if`** 判断语句
+      - **`c:choose`** 用来包含 `c:when` 或 `c:otherwise` 选择语句
       - **`c:when`** 在 `c:choose` 中，至少有一个，可以有多个
       - **`c:otherwise`** 在 `c:choose` 中，可有可无，若有只能有 1 个，并位于最后
       - `c:import`
-      - **`c:forEach`**
+      - **`c:forEach`**  循环语句
       - `c:forTokens`
       - `c:param`
       - **`c:redirect`**
