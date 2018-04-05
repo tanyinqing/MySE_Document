@@ -2,7 +2,7 @@
 
 > Expression Language 表达式语言 不用引入库
 
-> JSP Standard Tag Library jsp标准标记库 需要引入第三方库
+> JSP Standard Tag Library jsp 标准标记库 需要引入第三方库
 
 
 - EL 表达式语言

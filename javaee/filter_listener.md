@@ -1,8 +1,8 @@
 # Chapter 7 Filter & Listener
 
 1. `Filter`
-    - 过滤器
-    - `javax.servlet.Filter` Interface
+    - 过滤器 实现了这个接口的类
+    - `javax.servlet.Filter` Interface   接口
     - 注解式配置
     - 统一编码过滤器
 
@@ -37,6 +37,7 @@
 
               request.setCharacterEncoding(encoding);
               response.setCharacterEncoding(encoding);
+        //chain jQuery方法的链式调用
               chain.doFilter(request, response);
           }
 
@@ -46,14 +47,14 @@
       ```
      
 2. `Listener`
-    - 监听器
+    - 监听器 9个接口
     - `request` 相关监听器接口
         1. ServletRequestListener
         2. ServletRequestAttributeListener
     - `session` 相关监听器接口
-        1. HttpSessionListener
+        1. HttpSessionListener 重要
         2. HttpSessionActivationListener
-        3. HttpSessionAttributeListener
+        3. HttpSessionAttributeListener 重要
         4. HttpSessionBindingListener
         5. HttpSessionIdListener
     - `application` 相关监听器接口

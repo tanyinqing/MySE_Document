@@ -14,7 +14,7 @@
     5. `setAttribute() 设置页面跳转携带的信息`
     6. `getAttribute() 获取值`
     7. `getRequestDispatcher().forward()` 页面跳转 `forwrad` 转发
-    8. `setCharacterEncoding()`
+    8. `setCharacterEncoding()`  设置编码集
 - `response` 响应
     1. `sendRedirect()` 页面跳转 `redirect` 重定向
     2. `setCharacterEncoding()`
