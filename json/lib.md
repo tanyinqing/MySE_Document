@@ -1,7 +1,7 @@
 # Chapter 3 常用库
 
 - Java Library
-    1. `org.json`
+    1. `org.json`  官方库  无法反向
 
       ```
       // build.gradle
@@ -21,7 +21,7 @@
 
       ```
         
-    2. `Jackson JSON Processor`
+    2. `Jackson JSON Processor` 第三方
     
       ```
       // build.gradle
@@ -61,7 +61,7 @@
       Model model = gson.fromJson(json, Model.class);
       ```
         
-    4. `fastjson`
+    4. `fastjson`  最快
     
       ```
       // build.gradle

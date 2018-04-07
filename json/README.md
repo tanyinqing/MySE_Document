@@ -7,7 +7,7 @@
 1. 掌握 `JSON` 的数据结构
 2. 掌握 `Java` 和 `JavaScript` 常用的 `JSON` 库
 
-> 课外参考
+> 课外参考 它的官网 点中文支持多种语言
 
 1. [http://json.org](http://json.org)
 

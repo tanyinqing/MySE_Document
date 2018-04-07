@@ -4,7 +4,7 @@
 
     > Java Server Pages  java语言的服务器页面
 
-2. Servlet
+2. Servlet  用java语言写的界面
 
     > servlet  服务器端小程序
     

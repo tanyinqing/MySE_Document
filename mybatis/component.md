@@ -39,7 +39,7 @@
   }
   ```
 
-4. Create `resources/user-mapper.xml` mapper file
+4. Create `resources/user-mapper.xml` mapper file  映射文件
 
     > 注意：在使用 `Mapper` 接口时， `namespace` 的取值是 `Mapper` 接口的全限定名
 

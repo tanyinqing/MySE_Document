@@ -5,3 +5,5 @@
 3. `value` `string` `number` `object` `array` `ture` `false` `null`
 4. `string`
 5. `number`
+
+http://ip.taobao.com/ 淘宝地址库 
