@@ -1,8 +1,8 @@
-# Chapter 2 IoC / DI
+# Chapter 2 IoC / DI  控制反转
 
 > [Inversion of Control Containers and the Dependency Injection pattern](http://martinfowler.com/articles/injection.html)
 
-> by Martin Fowler
+> by Martin Fowler  马丁  
 
 - `strong coupling` 强耦合：
     - 高层应用类 依赖于 底层模块类
@@ -17,8 +17,8 @@
     > 从 强耦合 到 松散耦合 的 `decoupling` 解耦 过程中，实现了控制关系的反转
     
 - Spring IoC
-    1. `Constructor` Injection
-    2. `Setter` Injection
+    1. `Constructor` Injection  构造器实现
+    2. `Setter` Injection  set来实现
 
 - DI
 

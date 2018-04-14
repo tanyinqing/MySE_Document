@@ -39,7 +39,7 @@
   </context-param>
   ```
 
-3. Create `WEB-INF/web-servlet.xml` file
+3. Create `WEB-INF/web-servlet.xml` file 
 
   > `web-servlet.xml = your_dispatcher_serlet_name + -servlet.xml`
 
