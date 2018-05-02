@@ -3,7 +3,7 @@
 1. Edit `build.gradle` file
 
   ```gradle
-  compile 'org.mybatis:mybatis-spring:1.3.0'
+  compile 'org.mybatis:mybatis-spring:1.3.2'
   compile 'org.springframework:spring-jdbc:4.2.6.RELEASE'
   ```
 
@@ -16,7 +16,7 @@
   jdbc_password = your_password
   ```
 
-2. Edit `resources/applicationContext.xml` file
+3. Edit `resources/applicationContext.xml` file
 
   ```xml
   <context:property-placeholder location="classpath:jdbc.properties"/>
